@@ -17,6 +17,9 @@ hide:
 - Confirm the content marked **Draft - to be confirmed**, starting with governance, the [NFR targets](../nfrs/catalogue.md) and [service tiers](../nfrs/service-tiers.md)
 - Embed the guardrails in [solution design authorities](../governance/solution-design-authorities.md) and the [TDA](../governance/tda.md), so reviews start from the same defaults
 - Refine the [DDTS doctrine](../principles/doctrine.md) with colleagues across DDTS
+- Answer the [open questions](open-questions.md) - names, lead times, approvals and contacts we have not yet confirmed
+- Take the draft guardrails and the [approval status](approval-status.md) of each section to the TDA and TGB, and cut the first citable [release](releases.md)
+- Move the site to a [Defra GitHub organisation](moving-to-defra.md), with redirects so existing links keep working
 
 </section>
 
@@ -40,17 +43,27 @@ hide:
 
 <h2 id="roadmap-later"><span class="da-roadmap__tag">Later</span> Proposed</h2>
 
-- Add [reference architectures](../handrail/reference-architectures/index.md) for the capability gaps: field inspection, incident response, grants
-- Build a library of reusable patterns, linked to the [Secure by Design artefact library](https://github.com/co-cddo/SbD)
+- Develop the proposed [reference architectures](../handrail/reference-architectures/index.md) for field inspection, incident response and grants with the teams who own those capabilities
+- Grow the [patterns](../patterns/index.md) library, starting with infrastructure patterns
 - Measure how quickly teams get to a decision, and publish the results
 - **AI tools:** an assistant that answers architecture questions from this site, suggests which guardrails and capabilities apply to a design, and drafts decision records for teams to check
-- **Architecture review automation:** check guardrails automatically in delivery pipelines - for example hosting, secrets, dependencies and API specifications - so reviews focus on judgement rather than checklists
+- **Architecture review automation:** extend the [guardrail check](../deliver/guardrail-check.md) beyond its first seven guardrails - for example hosting and infrastructure as code - so reviews focus on judgement rather than checklists
 - Assess our architecture practice with the cross-government [maturity self-assessment](https://architecture.cddo.cabinetoffice.gov.uk/Tools/index.html), and publish what we will improve
-- Move to beta, and to the Defra GitHub organisation
+- Move to beta
 
 </section>
 
 </div>
+
+## Done recently
+
+- Structured metadata for every guardrail, with phase and status filters in the [guardrail library](../guardrails/library.md)
+- [Deliver a service](../deliver/index.md): what each phase needs, with evidence checklists and [getting onto Defra platforms](../deliver/platforms.md)
+- [Patterns](../patterns/index.md), a [worked example](../patterns/worked-example/index.md) and proposed reference architectures for the capability gaps
+- [Delivery partners](delivery-partners.md): contracting, mobilisation, handover and working with other suppliers
+- [Releases](releases.md), [approval status](approval-status.md), the [exception register](../governance/exception-register.md) and [guardrails health](../governance/guardrails-health.md)
+- The first automated [guardrail check](../deliver/guardrail-check.md) for repositories
+
 
 ## Guardrail backlog {#guardrail-backlog}
 
@@ -59,10 +72,10 @@ Guardrails we know we are missing, found by tracing each [doctrine and principle
 | Priority | Proposed guardrails | The gap | Doctrine and principle |
 | --- | --- | --- | --- |
 | High | **Agreed Defra on a page** | Publish the agreed enterprise data model to replace the draft [Defra on a page](../data/defra-on-a-page.md), with the authoritative source for each entity confirmed | [4. Data is an enterprise asset](../principles/doctrine.md#ddts-04) · [Principle 4](../principles/architecture-principles.md#gr-prin-04) |
-| High | **Products and platforms** | Nothing yet says how to build as products: long-lived product teams, product ownership, contributing back to shared platforms, and retiring products | [1. Platforms before projects](../principles/doctrine.md#ddts-01) · [Principles 1 and 3](../principles/architecture-principles.md#gr-prin-03) |
-| High | **Digital first and end-to-end services** | No guardrail asks teams to challenge paper processes, design across organisational boundaries or provide assisted digital routes | [6. Outcomes over structures](../principles/doctrine.md#ddts-06), [7. Digital first](../principles/doctrine.md#ddts-07) · [Principle 2](../principles/architecture-principles.md#gr-prin-02) |
-| High | **Field working and end-user devices** | Principle 8 has almost no guardrails: devices suited to the job, offline-first working, connectivity in remote areas and device security | [7. Digital first](../principles/doctrine.md#ddts-07) · [Principle 8](../principles/architecture-principles.md#gr-prin-08) |
-| High | **Agentic AI** | AI agents that take actions need extra controls: least-privilege tool access, human approval for consequential actions, audit trails and protection from prompt injection | [5. Assume AI](../principles/doctrine.md#ddts-05) · [Principles 6 and 7](../principles/architecture-principles.md#gr-prin-07) |
+| High | **Products and platforms** - drafted as [GR-PROD-01 to 04](../guardrails/products-and-platforms.md) | Nothing yet says how to build as products: long-lived product teams, product ownership, contributing back to shared platforms, and retiring products | [1. Platforms before projects](../principles/doctrine.md#ddts-01) · [Principles 1 and 3](../principles/architecture-principles.md#gr-prin-03) |
+| High | **Digital first and end-to-end services** - drafted as [GR-DIG-01 to 03](../guardrails/digital-first.md) | No guardrail asks teams to challenge paper processes, design across organisational boundaries or provide assisted digital routes | [6. Outcomes over structures](../principles/doctrine.md#ddts-06), [7. Digital first](../principles/doctrine.md#ddts-07) · [Principle 2](../principles/architecture-principles.md#gr-prin-02) |
+| High | **Field working and end-user devices** - drafted as [GR-FIELD-01 to 04](../guardrails/field-working-and-devices.md) | Principle 8 has almost no guardrails: devices suited to the job, offline-first working, connectivity in remote areas and device security | [7. Digital first](../principles/doctrine.md#ddts-07) · [Principle 8](../principles/architecture-principles.md#gr-prin-08) |
+| High | **Agentic AI** - drafted as [GR-AI-08 to 11](../guardrails/ai.md#gr-ai-08) | AI agents that take actions need extra controls: least-privilege tool access, human approval for consequential actions, audit trails and protection from prompt injection | [5. Assume AI](../principles/doctrine.md#ddts-05) · [Principles 6 and 7](../principles/architecture-principles.md#gr-prin-07) |
 | Medium | **Experimentation and sandboxes** | How to experiment safely and quickly: sandbox environments, synthetic data, time-boxed prototypes and the route from experiment to production | [5. Assume AI](../principles/doctrine.md#ddts-05) · [Principle 7](../principles/architecture-principles.md#gr-prin-07) |
 | Medium | **Low-code and Power Platform** | Environment strategy, application lifecycle, data loss prevention and support for low-code solutions built outside delivery teams | [3. Reuse before buy](../principles/doctrine.md#ddts-03) · [Principle 3](../principles/architecture-principles.md#gr-prin-03) |
 | Medium | **Resilience and continuity** | Business continuity and disaster recovery beyond hosting: dependency mapping, exercising and recovery testing by [service tier](../nfrs/service-tiers.md) | [2. Standards before exceptions](../principles/doctrine.md#ddts-02) · [Principles 1 and 6](../principles/architecture-principles.md#gr-prin-06) |

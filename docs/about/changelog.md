@@ -8,6 +8,20 @@
 
 - **New draft page: [services and capabilities](../handrail/services-and-capabilities.md).** It uses the definitions from Defra's six-level service taxonomy - outcomes, whole services and services, products, common business capabilities, components and data - and shows where the business capability model, technology capabilities and Defra on a page fit into it. It also explains where architecture uses words such as capability, platform and "service" differently. Definitions are context-specific and we will keep iterating them with service design and product colleagues.
 
+### Automated guardrail checks
+
+- **[Check your repository automatically](../deliver/guardrail-check.md):** a GitHub Action that checks a repository against GR-OPEN-02, GR-DEV-08, GR-API-02, GR-OPEN-03, GR-DEV-03, GR-DEV-06 and GR-DEV-09, and writes a report naming each guardrail. Each of those guardrails now names the check as its automated check.
+- **[Decisions about this site](../adr/index.md):** this site now records its own architecture decisions, following GR-DEV-09.
+
+### For the CDIO: versions, approvals and health
+
+- **Versioned releases.** The site now has [releases](releases.md) with semantic version numbers, recorded in `CHANGELOG.md`. Each release is tagged and has a PDF of every guardrail attached, to cite in contracts. The banner on every page shows the version in force.
+- **[Approval status](approval-status.md)** of each section of the site, and who approved it.
+- **[Exception register](../governance/exception-register.md)** and **[guardrails health](../governance/guardrails-health.md)**: exceptions per guardrail, exceptions expiring soon and guardrails that are candidates to change, reviewed every quarter.
+- **Who guardrails apply to:** each guardrail area now says whether it applies to arm's length bodies as well as the core department. These are still to be confirmed.
+- **New draft guardrails** from the high-priority backlog: [products and platforms](../guardrails/products-and-platforms.md), [digital first and end-to-end services](../guardrails/digital-first.md), [field working and devices](../guardrails/field-working-and-devices.md) and [agentic AI](../guardrails/ai.md#gr-ai-08).
+- **[Moving this site to a Defra GitHub organisation](moving-to-defra.md):** the plan, including redirects so links in contracts keep working.
+
 ### Delivery partners
 
 - **[Delivery partners](delivery-partners.md) is now a section**, with new pages on [contracting with this site](../partners/contracting.md) (versioning policy, how to cite a version, model clauses and an annex of every Must), a [mobilisation checklist](../partners/mobilisation.md), [handover and exit](../partners/handover-and-exit.md) and [working with other suppliers](../partners/multi-supplier.md).
