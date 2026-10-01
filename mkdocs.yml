@@ -67,6 +67,7 @@ hooks:
   - hooks/guardrails.py
   - hooks/nfrs.py
   - hooks/page_status.py
+  - hooks/cache_busting.py
 
 extra:
   generator: false
@@ -121,10 +122,13 @@ nav:
       - Working with us as a delivery partner: about/delivery-partners.md
       - The architecture team: about/team.md
       - What's new: about/changelog.md
+  - Principles:
+      - principles/index.md
+      - DDTS doctrine: principles/doctrine.md
+      - Architecture principles: principles/architecture-principles.md
   - Guardrails:
       - guardrails/index.md
       - Guardrail library: guardrails/library.md
-      - Architecture principles: guardrails/principles.md
       - Choosing technology: guardrails/choosing-technology.md
       - Hosting and platforms: guardrails/hosting-and-platforms.md
       - Software development: guardrails/software-development.md

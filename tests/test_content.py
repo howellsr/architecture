@@ -60,6 +60,16 @@ def test_guardrails_parse():
     assert len([g for g in found if g["level"] == "principle"]) == 8
 
 
+def test_principles_live_in_the_principles_section():
+    pages = {g["page"] for g in guardrails.parse(DOCS) if g["level"] == "principle"}
+    assert pages == {"principles/architecture-principles.md"}
+
+
+def test_doctrine_has_seven_non_negotiables():
+    with open(os.path.join(DOCS, "principles", "doctrine.md"), encoding="utf-8") as handle:
+        assert len(re.findall(r"^## \d+\. .+\{#ddts-0\d\}$", handle.read(), re.M)) == 7
+
+
 def test_guardrail_without_badge_fails(tmp_path):
     folder = tmp_path / "guardrails"
     folder.mkdir()

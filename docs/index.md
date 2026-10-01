@@ -64,6 +64,40 @@ How the TGB, the TDA and solution design authorities work, what to bring and how
 </div>
 </section>
 
+<section class="da-section" aria-labelledby="decide" markdown>
+<p class="da-kicker da-kicker--dark">How we decide</p>
+<h2 id="decide" class="da-h2">Doctrine, principles, guardrails</h2>
+<p class="da-intro">One line of sight from the CDIO's non-negotiables to the decisions your team makes this week.</p>
+
+<div class="da-cascade" markdown>
+
+<div class="da-cascade__step" markdown>
+<span class="da-cascade__n"><!-- guardrails:doctrines --></span>
+
+### [DDTS doctrine](principles/doctrine.md)
+
+The non-negotiables: platforms before projects, standards before exceptions, reuse before buy, data as an enterprise asset, assume AI, outcomes over structures, digital first.
+</div>
+
+<div class="da-cascade__step" markdown>
+<span class="da-cascade__n"><!-- guardrails:principles --></span>
+
+### [Architecture principles](principles/architecture-principles.md)
+
+How architecture applies the doctrine: delivery-focused, designed for users, maximum value, clean data, connected, secure, innovative, right tools.
+</div>
+
+<div class="da-cascade__step" markdown>
+<span class="da-cascade__n"><!-- guardrails:count --></span>
+
+### [Guardrails](guardrails/library.md)
+
+Practical Must, Should and Could defaults. Stay inside them and your team decides.
+</div>
+
+</div>
+</section>
+
 <section class="da-band" aria-labelledby="flow" markdown>
 <div class="da-band__copy" markdown>
 <p class="da-kicker">Light-touch governance</p>

@@ -2,7 +2,7 @@
 
 <p class="lead">Security guardrails for every Defra service. They put the government <a href="https://www.security.gov.uk/policy-and-guidance/secure-by-design/">Secure by Design</a> approach into practice.</p>
 
-Supports principle [GR-PRIN-06](principles.md#gr-prin-06). See also [enterprise security architecture](../security/index.md).
+Supports principle [GR-PRIN-06](../principles/architecture-principles.md#gr-prin-06). See also [enterprise security architecture](../security/index.md).
 
 ## GR-SEC-01 Follow Secure by Design {#gr-sec-01}
 

@@ -16,7 +16,7 @@
 
 | Standard | Why it matters | Where we apply it |
 | --- | --- | --- |
-| [Service Standard](https://www.gov.uk/service-manual/service-standard) | The 14 points every government service is assessed against | Throughout, especially [principles](../guardrails/principles.md) |
+| [Service Standard](https://www.gov.uk/service-manual/service-standard) | The 14 points every government service is assessed against | Throughout, especially [principles](../principles/architecture-principles.md) |
 | [Technology Code of Practice](https://www.gov.uk/guidance/the-technology-code-of-practice) | Criteria for designing, building and buying technology, used in spend control | Mapped below |
 | [Secure by Design](https://www.security.gov.uk/policy-and-guidance/secure-by-design/) | Government approach to security in digital delivery | [Secure by Design in Defra](../security/secure-by-design.md) |
 | [GOV.UK Service Manual](https://www.gov.uk/service-manual) | How to deliver government services | Alongside the Defra Digital Service Manual |
@@ -34,7 +34,7 @@ How the 13 points of the [Technology Code of Practice](https://www.gov.uk/guidan
 
 | TCoP point | Defra guidance |
 | --- | --- |
-| 1. Define user needs | [GR-PRIN-02](../guardrails/principles.md#gr-prin-02); [Defra Digital Service Manual](https://digital.defra.gov.uk/service-manual) |
+| 1. Define user needs | [GR-PRIN-02](../principles/architecture-principles.md#gr-prin-02); [Defra Digital Service Manual](https://digital.defra.gov.uk/service-manual) |
 | 2. Make things accessible and inclusive | [Front end and accessibility](../guardrails/front-end-and-accessibility.md) |
 | 3. Be open and use open source | [Open source and working in the open](../guardrails/open-source.md) |
 | 4. Make use of open standards | [GR-TECH-05](../guardrails/choosing-technology.md#gr-tech-05), [data standards](../data/data-standards.md) |

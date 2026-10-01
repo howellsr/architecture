@@ -105,7 +105,7 @@ body {
 }
 
 .md-typeset .md-button,
-.md-typeset .grid.cards a,
+.md-typeset .grid.cards strong > a,
 .md-typeset a.bcm-tile,
 .md-typeset .cap-matrix a {
   text-decoration: none;
@@ -574,6 +574,23 @@ body {
   color: #fff;
   font-weight: 700;
   font-size: 0.78rem;
+}
+
+.da-stats dt a {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: var(--da-lime);
+  text-underline-offset: 0.2em;
+}
+
+.da-stats dt a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.da-stats dt a:focus-visible {
+  outline: 3px solid #ffdd00;
+  outline-offset: 2px;
+  color: #fff;
 }
 
 .da-stats .da-stats__n {
@@ -1419,4 +1436,82 @@ body {
 /* Ids in tables never break across lines */
 .md-typeset td code {
   white-space: nowrap;
+}
+
+/* Home: doctrine -> principles -> guardrails cascade */
+.md-typeset .da-cascade {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  counter-reset: none;
+}
+
+.md-typeset .da-cascade__step {
+  position: relative;
+  padding: 1rem 1.4rem 1rem 1.1rem;
+  background: var(--da-card);
+  border: 1px solid var(--da-line);
+  border-left: 5px solid var(--da-navy);
+}
+
+.md-typeset .da-cascade__step:nth-child(2) { border-left-color: var(--da-green); }
+.md-typeset .da-cascade__step:nth-child(3) { border-left-color: var(--da-lime); }
+
+[data-md-color-scheme="slate"] .md-typeset .da-cascade__step:first-child { border-left-color: #6fa8d6; }
+
+.md-typeset .da-cascade__step + .da-cascade__step {
+  margin-left: -1px;
+}
+
+.md-typeset .da-cascade__step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -0.65rem;
+  z-index: 1;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: var(--da-card);
+  border-top: 1px solid var(--da-line);
+  border-right: 1px solid var(--da-line);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.md-typeset .da-cascade__n {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--da-green);
+  font-variant-numeric: tabular-nums;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .da-cascade__n {
+  color: #6fd396;
+}
+
+.md-typeset .da-cascade__step h3 {
+  margin: 0.5rem 0 0.4rem;
+  font-size: 1rem;
+}
+
+.md-typeset .da-cascade__step h3 .headerlink {
+  display: none;
+}
+
+.md-typeset .da-cascade__step p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--da-muted);
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .da-cascade { grid-template-columns: minmax(0, 1fr); }
+  .md-typeset .da-cascade__step + .da-cascade__step { margin: -1px 0 0; }
+  .md-typeset .da-cascade__step:not(:last-child)::after {
+    top: auto;
+    bottom: -0.65rem;
+    right: 50%;
+    transform: translateX(50%) rotate(135deg);
+  }
 }

@@ -11,7 +11,7 @@
 | **Adopt a risk-driven approach** | Understand what you are protecting and from whom, then choose proportionate controls. | [Threat modelling](threat-modelling.md) |
 | **Design usable security controls** | Security that gets in the way gets worked around. Test controls with users. | [GR-IAM-01](../guardrails/identity-and-access.md#gr-iam-01) |
 | **Build in detect and respond security** | Log what matters and send it to the SOC; plan how you will respond. | [GR-SEC-07](../guardrails/security.md#gr-sec-07), [GR-OPS-01](../guardrails/observability-and-operations.md#gr-ops-01) |
-| **Design flexible architectures** | Loosely coupled components that can be patched, replaced or isolated. | [GR-PRIN-01](../guardrails/principles.md#gr-prin-01) |
+| **Design flexible architectures** | Loosely coupled components that can be patched, replaced or isolated. | [GR-PRIN-01](../principles/architecture-principles.md#gr-prin-01) |
 | **Minimise the attack surface** | Expose only what is needed; remove unused features, ports, accounts and dependencies. | [GR-API-07](../guardrails/apis-and-integration.md#gr-api-07) |
 | **Defend in depth** | Layer controls so that one failure does not mean a breach. | [Security guardrails](../guardrails/security.md) |
 | **Embed continuous assurance** | Automate scanning and testing in pipelines; review the threat model as the service changes. | [GR-SEC-05](../guardrails/security.md#gr-sec-05) |

@@ -4,9 +4,16 @@
 
 ## October 2026
 
+### DDTS doctrine
+
+- **[DDTS doctrine](../principles/doctrine.md):** the CDIO's seven non-negotiables now sit above the architecture principles, with links to the principles and guardrails that apply them.
+- **[Principles](../principles/index.md)** have their own section, showing how doctrine, principles and guardrails fit together.
+- [GR-AI-01](../guardrails/ai.md#gr-ai-01) now asks teams to consider AI first, in line with the doctrine.
+- Fixed the home page figures displaying incorrectly when the browser had cached an older stylesheet.
+
 ### Principles, NFRs and accessibility
 
-- **[Architecture principles](../guardrails/principles.md)** now use Defra's eight agreed Strategic Architecture Principles, each linked to the guardrails that put it into practice.
+- **[Architecture principles](../principles/architecture-principles.md)** now use Defra's eight agreed Strategic Architecture Principles, each linked to the guardrails that put it into practice.
 - **[Non-functional requirements](../nfrs/index.md):** new section with service tiers, an NFR catalogue and guidance on writing good NFRs. Targets are draft until confirmed.
 - **Accessibility:** every page is now checked against WCAG 2.2 AA in light and dark mode on each change. Fixed colour contrast, keyboard access to the home page search, touch target sizes and diagram text alternatives.
 - **Draft markers:** pages awaiting confirmation now show a "Draft - to be confirmed" banner.
