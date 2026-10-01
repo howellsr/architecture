@@ -68,6 +68,7 @@ hooks:
   - hooks/nfrs.py
   - hooks/page_status.py
   - hooks/cache_busting.py
+  - hooks/site_info.py
 
 extra:
   generator: false
@@ -121,6 +122,7 @@ nav:
       - Using this site: about/using-this-site.md
       - Working with us as a delivery partner: about/delivery-partners.md
       - The architecture team: about/team.md
+      - Roadmap: about/roadmap.md
       - What's new: about/changelog.md
   - Principles:
       - principles/index.md

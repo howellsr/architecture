@@ -4,6 +4,11 @@
 
 ## October 2026
 
+### Alpha and roadmap
+
+- The site is now marked as **alpha**, with a phase banner on every page.
+- New [roadmap](roadmap.md): now, next and later.
+
 ### DDTS doctrine
 
 - **[DDTS doctrine](../principles/doctrine.md):** the CDIO's seven non-negotiables now sit above the architecture principles, with links to the principles and guardrails that apply them.
