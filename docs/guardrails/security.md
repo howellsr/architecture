@@ -8,6 +8,8 @@ Supports principle [GR-PRIN-06](../principles/architecture-principles.md#gr-prin
 
 <span class="rfc rfc--must">Must</span> Every new service and significant change follows the [Secure by Design](../security/secure-by-design.md) activities, with a named risk owner, from discovery onward.
 
+**How to meet it:** start from the patterns and checklists in the [Secure by Design artefact library](https://github.com/co-cddo/SbD) rather than designing controls from scratch.
+
 ## GR-SEC-02 Keep a current threat model {#gr-sec-02}
 
 <span class="rfc rfc--must">Must</span> Each service has a [threat model](../security/threat-modelling.md), created by the team in alpha and revisited at every significant change and at least annually.

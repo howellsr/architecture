@@ -1515,3 +1515,93 @@ body {
     transform: translateX(50%) rotate(135deg);
   }
 }
+
+/* Technology reference model: layered stack */
+.md-typeset .tstack {
+  display: grid;
+  gap: 0.4rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.md-typeset .tstack__layer {
+  display: grid;
+  grid-template-columns: minmax(0, 10rem) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  padding: 0.8rem 1rem;
+  background: var(--da-card);
+  border: 1px solid var(--da-line);
+  border-left: 5px solid var(--da-navy);
+  border-radius: 2px;
+}
+
+.md-typeset .tstack__layer:nth-child(2) { border-left-color: var(--da-green); }
+.md-typeset .tstack__layer:nth-child(3) { border-left-color: var(--da-blue); }
+.md-typeset .tstack__layer:nth-child(4) { border-left-color: var(--da-lime); }
+[data-md-color-scheme="slate"] .md-typeset .tstack__layer:first-child { border-left-color: #6fa8d6; }
+
+.md-typeset .tstack__label strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--da-heading);
+}
+
+.md-typeset .tstack__label span {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.7rem;
+  color: var(--da-muted);
+}
+
+.md-typeset ul.tstack__caps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.md-typeset ul.tstack__caps li {
+  margin: 0;
+}
+
+.md-typeset a.tstack__cap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 1.6rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+  background: var(--da-paper);
+  border: 1px solid var(--da-line);
+  border-bottom: 3px solid var(--da-green);
+  border-radius: 3px;
+}
+
+.md-typeset a.tstack__cap--emerging { border-bottom-color: var(--da-amber); }
+.md-typeset a.tstack__cap--gap { border-bottom-color: var(--da-red); border-style: dashed; border-bottom-style: solid; }
+
+.md-typeset a.tstack__cap:hover {
+  border-color: var(--da-green);
+  text-decoration: underline;
+}
+
+
+.tstack__id {
+  white-space: nowrap;
+  font-family: var(--md-code-font-family, monospace);
+  font-size: 0.62rem;
+  color: var(--da-muted);
+}
+
+.md-typeset .tstack__legend {
+  font-size: 0.72rem;
+  color: var(--da-muted);
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .tstack__layer { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+}

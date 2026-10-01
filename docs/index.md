@@ -190,6 +190,7 @@ Practical Must, Should and Could defaults. Stay inside them and your team decide
 <li><a href="https://www.gov.uk/service-manual/service-standard"><strong>Service Standard</strong><span>The 14 points every government service meets</span></a></li>
 <li><a href="https://www.gov.uk/guidance/the-technology-code-of-practice"><strong>Technology Code of Practice</strong><span>How government designs, builds and buys technology</span></a></li>
 <li><a href="https://www.security.gov.uk/policy-and-guidance/secure-by-design/"><strong>Secure by Design</strong><span>Government's approach to security in delivery</span></a></li>
+<li><a href="https://github.com/co-cddo/SbD"><strong>Secure by Design artefact library</strong><span>Reusable security patterns, checklists and threat models</span></a></li>
 </ul>
 </div>
 <div class="da-panel" markdown>

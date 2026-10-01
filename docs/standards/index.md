@@ -48,6 +48,17 @@ How the 13 points of the [Technology Code of Practice](https://www.gov.uk/guidan
 | 12. Make your technology sustainable | [Sustainability](../guardrails/sustainability.md) |
 | 13. Meet the Service Standard | [Governance](../governance/index.md); [Defra Digital Service Manual](https://digital.defra.gov.uk/service-manual) |
 
+## Cross-government architecture
+
+Other parts of government publish architecture in the open. We reuse their models and approaches rather than inventing our own.
+
+| Resource | What it is | How it relates to this site |
+| --- | --- | --- |
+| [Secure by Design artefact library](https://github.com/co-cddo/SbD) | Reusable security patterns, blueprints, checklists and threat models, run in the open on GitHub | Linked from [Secure by Design in Defra](../security/secure-by-design.md) and [threat modelling](../security/threat-modelling.md) |
+| [Local Government Architecture Model](https://architecture.cddo.cabinetoffice.gov.uk/gds-local/) | GDS Local's layered model of the technology councils use, from public channels and shared components down to service and corporate systems | Inspired our [technology stack view](../handrail/technology-capabilities.md#the-technology-stack-at-a-glance). Useful where Defra services work with councils, such as planning, waste and environmental health |
+| [Government data architecture](https://data-architecture.datamarketplace.gov.uk/) | Cross-government data architecture guidance from the Data Marketplace | Complements our [data architecture](../data/index.md) and [data standards](../data/data-standards.md) |
+| [Lightweight architecture for learning at pace](https://technology.blog.gov.uk/2026/08/28/lightweight-architecture-for-learning-at-pace/) | Government Technology blog post on lightweight, trust-based architecture practice | Reflected in our [advice-first governance](../governance/index.md#seek-advice-not-permission) |
+
 ## Inspiration
 
 We have learned from other departments working in the open, in particular the [DfE architecture site](https://dfe-digital.github.io/architecture/). Thank you.

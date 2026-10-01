@@ -10,6 +10,9 @@
 - **[Principles](../principles/index.md)** have their own section, showing how doctrine, principles and guardrails fit together.
 - [GR-AI-01](../guardrails/ai.md#gr-ai-01) now asks teams to consider AI first, in line with the doctrine.
 - Fixed the home page figures displaying incorrectly when the browser had cached an older stylesheet.
+- **[Technology stack view](../handrail/technology-capabilities.md#the-technology-stack-at-a-glance):** technology capabilities shown as layers, inspired by the Local Government Architecture Model.
+- **[Seek advice, not permission](../governance/index.md#seek-advice-not-permission):** the advice process is now explicit in governance, and ADRs record the advice sought.
+- Links to the cross-government [Secure by Design artefact library](https://github.com/co-cddo/SbD), the Local Government Architecture Model and government data architecture guidance.
 
 ### Principles, NFRs and accessibility
 

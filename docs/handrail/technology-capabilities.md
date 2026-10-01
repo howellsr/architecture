@@ -6,6 +6,12 @@ status: draft
 
 <p class="lead">Technology capabilities describe what technology must do to enable Defra's business capabilities, and the strategic option to use first for each.</p>
 
+## The technology stack at a glance
+
+Defra's technology capabilities as layers, from what users touch at the top to the foundations every service runs on. Select a capability for what to use.
+
+<!-- capabilities:stack -->
+
 <!-- capabilities:technology-summary -->
 
 | Status | Meaning | What you should do |

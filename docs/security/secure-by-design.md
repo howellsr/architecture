@@ -38,6 +38,21 @@ flowchart LR
 | Beta | Implement and test controls; pipeline security scanning; independent IT health check; accept residual risks | Health check report and remediation; risk acceptance records |
 | Live | Monitor via the SOC; patch and scan continuously; review threat model at least annually and on significant change | Up-to-date threat model; vulnerability metrics |
 
+## Reuse proven security artefacts
+
+Before designing a control from scratch, check the cross-government [Secure by Design artefact library](https://github.com/co-cddo/SbD). It collects proven solutions to common security problems - patterns, blueprints, checklists, requirements, threat models, templates and code samples - organised by domain:
+
+| Domain | Useful for |
+| --- | --- |
+| Access control and authentication | Identity patterns alongside [GR-IAM guardrails](../guardrails/identity-and-access.md) |
+| Artificial intelligence | Securing AI services, alongside [GR-AI guardrails](../guardrails/ai.md) |
+| Business continuity and disaster recovery | Resilience designs for your [service tier](../nfrs/service-tiers.md) |
+| Cloud | Secure cloud configuration and hosting patterns |
+| Operations, risks and threats | Example [threat models](threat-modelling.md) and monitoring patterns |
+| Security architecture and governance | Reference designs and assurance approaches |
+
+The library is in alpha and run in the open. If your team builds something reusable, propose it through the library's GitHub issues so other departments benefit too. Never put sensitive information in a public issue.
+
 ## Proportionality
 
 Secure by Design is risk-driven. A static information site and a payments service carry different risks. Talk to a security architect early to agree what is proportionate - most services on the strategic platforms inherit many controls and need far less bespoke work.
