@@ -7,7 +7,9 @@
 ### Alpha and roadmap
 
 - The site is now marked as **alpha**, with a phase banner on every page.
-- New [roadmap](roadmap.md): now, next and later.
+- New [roadmap](roadmap.md): now, next and later, including an AI architecture facilitator agent (next), AI tools and architecture review automation (later).
+- Technology capabilities are now aligned with the cross-government [Digital Technology Capability Model](https://architecture.cddo.cabinetoffice.gov.uk/digital-capability-model/index.html), with links to OCTO's citizen-facing reference architecture, self-assessment and AI enablement tools.
+- Search now treats ids such as `GR-HOST-01` and `NFR-AVL-01` as single terms, so searching an id finds it first.
 
 ### DDTS doctrine
 

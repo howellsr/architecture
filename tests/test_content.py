@@ -50,6 +50,13 @@ def test_capability_model_catches_unknown_reference():
     assert any("TC99" in e for e in capabilities.validate(business, technology, DOCS))
 
 
+def test_every_technology_capability_has_a_government_model_level():
+    technology = load_yaml("capabilities", "technology-capabilities.yaml")
+    del technology["capabilities"][0]["government_model"]
+    business = load_yaml("capabilities", "business-capabilities.yaml")
+    assert any("government_model" in e for e in capabilities.validate(business, technology, DOCS))
+
+
 # --- Guardrails ----------------------------------------------------------------
 
 

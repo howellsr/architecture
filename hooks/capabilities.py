@@ -63,7 +63,10 @@ def validate(business: dict, technology: dict, docs_dir: str) -> list[str]:
     for dup in {i for i in tech_ids if tech_ids.count(i) > 1}:
         errors.append(f"duplicate technology capability id {dup}")
 
+    levels = {lvl["id"] for lvl in technology.get("government_model_levels", [])}
     for cap in technology["capabilities"]:
+        if cap.get("government_model") not in levels:
+            errors.append(f"{cap['id']} has unknown government_model {cap.get('government_model')!r}")
         if cap.get("domain") not in domains:
             errors.append(f"{cap['id']} has unknown domain {cap.get('domain')!r}")
         if cap.get("status") not in STATUS_LABELS:
@@ -218,7 +221,8 @@ def _business_detail(_url_to, url_to) -> str:
         if cap["type"] != current_type:
             current_type = cap["type"]
             out.append(f"## {current_type.capitalize()} capabilities\n")
-        out.append(f'### {cap["number"]} {cap["name"]} {{#{cap["id"].lower()}}}\n')
+        # The id is in the heading so searching "BC05" finds this section first.
+        out.append(f'### {cap["number"]} {cap["name"]} ({cap["id"]}) {{#{cap["id"].lower()}}}\n')
         out.append(f'{cap["description"]}\n')
         out.append('<div class="grid" markdown>\n')
         out.append('<div markdown>\n\n**Outcomes**\n')
@@ -274,12 +278,16 @@ def _technology_summary(url_to, md_to=None) -> str:
 
 def _technology_catalogue(_url_to, url_to) -> str:
     bus = _model["bus_by_id"]
+    levels = {lvl["id"]: lvl["name"] for lvl in _model["technology"]["government_model_levels"]}
     out = []
     for domain in _model["technology"]["domains"]:
         out.append(f'## {domain["name"]}\n\n{domain["description"]}\n')
         for cap in (c for c in _model["technology"]["capabilities"] if c["domain"] == domain["id"]):
             out.append(f'### {cap["id"]} {cap["name"]} {{#{cap["id"].lower()}}}\n')
             out.append(f'{_status_badge(cap["status"])} {cap["description"]}\n')
+            out.append(
+                f'<small>Government capability model: {e(levels[cap["government_model"]])}</small>\n'
+            )
             options = cap.get("options", [])
             if options:
                 out.append("**Use first**\n")

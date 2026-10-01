@@ -28,6 +28,9 @@ Applies the DDTS doctrine [assume AI until proven otherwise](../principles/doctr
 
 <span class="rfc rfc--must">Must</span> Evaluate models for accuracy, bias and safety before release, monitor them in live, and include AI-specific threats (prompt injection, data leakage, model abuse) in your [threat model](../security/threat-modelling.md).
 
+!!! tip "Cross-government AI tools"
+    OCTO's [AI technology enablement](https://architecture.cddo.cabinetoffice.gov.uk/psai-tech/index.html) resources include an AI risk management toolkit, an AI assurance questionnaire, the public sector AI governance operating model and a service assessment questions navigator. Use them to evidence [GR-AI-03](#gr-ai-03), [GR-AI-04](#gr-ai-04) and [GR-AI-05](#gr-ai-05).
+
 ## GR-AI-06 Talk to the TDA about novel use {#gr-ai-06}
 
 <span class="rfc rfc--must">Must</span> Novel uses of AI, and any use of generative AI in decision making, are reviewed by the [Technical Design Authority](../governance/tda.md).

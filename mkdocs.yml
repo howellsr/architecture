@@ -56,6 +56,12 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
+plugins:
+  # Keep hyphenated ids such as GR-HOST-01, NFR-AVL-01 and DDTS-01 as single
+  # search terms, so searching for an id finds that guardrail first.
+  - search:
+      separator: '[\s,:!=\[\]()"/]+|\.(?!\d)'
+
 extra_css:
   - stylesheets/defra.css
 
