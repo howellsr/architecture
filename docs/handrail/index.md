@@ -6,6 +6,12 @@
 
 <div class="grid cards" markdown>
 
+-   **[Services and capabilities](services-and-capabilities.md)**
+
+    ---
+
+    What we mean by a service, product and capability, and how Defra's service taxonomy links to the capability model. Draft.
+
 -   **[Business capabilities](business-capabilities.md)**
 
     ---
@@ -46,6 +52,8 @@ flowchart TB
     P --> S["Services<br/>what users see"]
     S -.->|"deliver"| O
 ```
+
+These layers line up with Defra's service taxonomy - see [services and capabilities](services-and-capabilities.md) for definitions and how they connect.
 
 Business capabilities change slowly. Products and services change quickly. Mapping one to the other lets us:
 

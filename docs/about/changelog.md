@@ -4,6 +4,10 @@
 
 ## October 2026
 
+### Services and capabilities
+
+- **New draft page: [services and capabilities](../handrail/services-and-capabilities.md).** Definitions of outcome, whole service, service, product, business capability, technology capability, platform, component, data and journey. It shows how Defra's service taxonomy links through to the business capability model. The definitions are contested and context-specific, and we will keep iterating them with service design and product colleagues.
+
 ### Patterns and a worked example
 
 - **New [Patterns](../patterns/index.md) section**, modelled on the Department for Education's: asynchronous submission with an outbox, acting on behalf of an organisation or holding, file upload with malware scanning, reading from an authoritative source, and publishing open data with metadata. Each lists the guardrails it helps you meet and related Secure by Design artefacts.

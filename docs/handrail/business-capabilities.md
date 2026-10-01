@@ -22,6 +22,12 @@ Level 1 capabilities are agreed. **Level 2 capabilities are a draft** - informed
 
 <!-- capabilities:business-detail -->
 
+## Capabilities and services
+
+Business capabilities are not services. A **service** helps a user do something, such as apply for a licence. A **capability** is what Defra does, such as "Issue licences and permits", whichever services, organisations and systems do it. One capability is usually delivered through many services, and one service often draws on several capabilities.
+
+Defra's service taxonomy calls these **common business capabilities**, and uses them to connect services and products to the data and technology beneath them. See [services and capabilities](services-and-capabilities.md) for the definitions and how they fit together.
+
 ## Improving the model
 
 The model lives in [`capabilities/business-capabilities.yaml`](https://github.com/howellsr/architecture/blob/main/capabilities/business-capabilities.yaml). To propose a change, open a pull request explaining which attribute it improves. Changes to level 1 capabilities are reviewed by the [Technical Design Authority](../governance/tda.md) and approved by the [Technology Governance Board](../governance/tgb.md).
