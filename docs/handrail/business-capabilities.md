@@ -24,9 +24,9 @@ Level 1 capabilities are agreed. **Level 2 capabilities are a draft** - informed
 
 ## Capabilities and services
 
-Business capabilities are not services. A **service** helps a user do something, such as apply for a licence. A **capability** is what Defra does, such as "Issue licences and permits", whichever services, organisations and systems do it. One capability is usually delivered through many services, and one service often draws on several capabilities.
+Business capabilities are not services. A **service** is everything government provides to deliver an outcome for its users, such as getting a licence to do works by a river. A **capability** is what Defra does, such as "Issue licences and permits", whichever services, organisations and systems do it. One capability usually supports many services, and one service often draws on several capabilities.
 
-Defra's service taxonomy calls these **common business capabilities**, and uses them to connect services and products to the data and technology beneath them. See [services and capabilities](services-and-capabilities.md) for the definitions and how they fit together.
+In Defra's service taxonomy, business capabilities are level 4, **common business capabilities**: below services and products, and above the components and data that realise them. See [services and capabilities](services-and-capabilities.md) for the taxonomy's definitions and how the handrail fits into it.
 
 ## Improving the model
 

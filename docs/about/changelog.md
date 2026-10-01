@@ -6,7 +6,7 @@
 
 ### Services and capabilities
 
-- **New draft page: [services and capabilities](../handrail/services-and-capabilities.md).** Definitions of outcome, whole service, service, product, business capability, technology capability, platform, component, data and journey. It shows how Defra's service taxonomy links through to the business capability model. The definitions are contested and context-specific, and we will keep iterating them with service design and product colleagues.
+- **New draft page: [services and capabilities](../handrail/services-and-capabilities.md).** It uses the definitions from Defra's six-level service taxonomy - outcomes, whole services and services, products, common business capabilities, components and data - and shows where the business capability model, technology capabilities and Defra on a page fit into it. It also explains where architecture uses words such as capability, platform and "service" differently. Definitions are context-specific and we will keep iterating them with service design and product colleagues.
 
 ### Delivery partners
 

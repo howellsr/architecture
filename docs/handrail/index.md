@@ -10,7 +10,7 @@
 
     ---
 
-    What we mean by a service, product and capability, and how Defra's service taxonomy links to the capability model. Draft.
+    Defra's service taxonomy - outcomes, services, products, capabilities, components and data - and how the handrail fits into it. Draft.
 
 -   **[Business capabilities](business-capabilities.md)**
 
