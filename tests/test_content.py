@@ -338,6 +338,20 @@ def test_every_guardrail_page_says_who_it_applies_to():
 # --- Pages ---------------------------------------------------------------------
 
 
+REPO_LINK = re.compile(r"https://github\.com/howellsr/architecture/(?:blob|tree)/main/([^)\s\"'#>]+)")
+
+
+def test_links_to_files_in_this_repository_exist():
+    """The link checker skips these links, because they 404 until a pull request is merged."""
+    missing = []
+    for path in glob.glob(os.path.join(DOCS, "**", "*.md"), recursive=True) + [os.path.join(ROOT, "README.md")]:
+        with open(path, encoding="utf-8") as handle:
+            for target in REPO_LINK.findall(handle.read()):
+                if not os.path.exists(os.path.join(ROOT, target.rstrip("/"))):
+                    missing.append(f"{os.path.relpath(path, ROOT)} -> {target}")
+    assert not missing, "Links to files that do not exist: " + ", ".join(missing)
+
+
 MERMAID = re.compile(r"```mermaid\n(.*?)```", re.S)
 
 
