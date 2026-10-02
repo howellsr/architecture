@@ -1,0 +1,695 @@
+{
+  "attributes": [
+    {
+      "name": "Oriented on meaningful outcomes",
+      "description": "Each capability exists to deliver an outcome for the public, the environment or the department."
+    },
+    {
+      "name": "Stable over time",
+      "description": "Capabilities change far more slowly than organisations, processes or systems."
+    },
+    {
+      "name": "Independent of organisation structure",
+      "description": "A capability can be delivered by core Defra, an arm's length body or a partner."
+    },
+    {
+      "name": "Independent of technology",
+      "description": "Capabilities say what we do, never which product does it."
+    },
+    {
+      "name": "Measurable",
+      "description": "We can assess maturity, cost, risk and investment against each capability."
+    },
+    {
+      "name": "Expressed in active, plain language",
+      "description": "Verb first, no jargon, understandable by anyone."
+    }
+  ],
+  "business_capabilities": [
+    {
+      "id": "BC01",
+      "number": "01",
+      "name": "Act as a custodian of the environment and ecosystems",
+      "type": "core",
+      "description": "Understand, protect, restore and enhance the natural environment - land, water, air, seas, habitats and species - for current and future generations.",
+      "outcomes": [
+        "Thriving plants and wildlife",
+        "Clean air and clean and plentiful water",
+        "Reduced risk from environmental hazards"
+      ],
+      "level2": [
+        "Monitor environmental condition",
+        "Protect and recover species and habitats",
+        "Manage land, water, air and marine resources",
+        "Designate and manage protected sites",
+        "Manage flood and coastal erosion risk",
+        "Manage natural capital and biodiversity net gain"
+      ],
+      "technology": [
+        "TC15",
+        "TC16",
+        "TC17",
+        "TC18",
+        "TC19",
+        "TC11"
+      ]
+    },
+    {
+      "id": "BC02",
+      "number": "02",
+      "name": "Conduct research and analyse evidence",
+      "type": "core",
+      "description": "Build and use the scientific, economic and social evidence base that underpins policy, regulation and operational decisions.",
+      "outcomes": [
+        "Decisions grounded in robust evidence",
+        "Trusted official statistics"
+      ],
+      "level2": [
+        "Commission and conduct research",
+        "Collect and curate evidence",
+        "Analyse, model and forecast",
+        "Publish official statistics",
+        "Horizon scan for emerging risks"
+      ],
+      "technology": [
+        "TC16",
+        "TC15",
+        "TC18",
+        "TC19",
+        "TC20",
+        "TC10"
+      ]
+    },
+    {
+      "id": "BC03",
+      "number": "03",
+      "name": "Create policy and legislation",
+      "type": "core",
+      "description": "Develop, consult on, implement and evaluate policy, legislation and regulation, including international and trade agreements.",
+      "outcomes": [
+        "Effective, proportionate policy and regulation",
+        "Policy informed by those it affects"
+      ],
+      "level2": [
+        "Develop and appraise policy options",
+        "Consult and gather views",
+        "Draft and maintain legislation",
+        "Negotiate international agreements",
+        "Evaluate policy impact"
+      ],
+      "technology": [
+        "TC06",
+        "TC16",
+        "TC10",
+        "TC24",
+        "TC20"
+      ]
+    },
+    {
+      "id": "BC04",
+      "number": "04",
+      "name": "Engage with citizens and organisations",
+      "type": "core",
+      "description": "Inform, advise, listen to and build relationships with the public, farmers, businesses, partners and other stakeholders.",
+      "outcomes": [
+        "Users can find what they need and do what they need to do",
+        "Strong relationships with the sectors we work with"
+      ],
+      "level2": [
+        "Provide information and guidance",
+        "Manage customer and stakeholder relationships",
+        "Handle enquiries, complaints and information requests",
+        "Run campaigns and communications",
+        "Gather and act on feedback"
+      ],
+      "technology": [
+        "TC01",
+        "TC04",
+        "TC06",
+        "TC07",
+        "TC03",
+        "TC08"
+      ]
+    },
+    {
+      "id": "BC05",
+      "number": "05",
+      "name": "Issue licences and permits",
+      "type": "core",
+      "description": "Decide whether and on what terms people and organisations can carry out regulated activities, and keep registers of what has been permitted.",
+      "outcomes": [
+        "Regulated activity happens safely and lawfully",
+        "Fast, predictable decisions for applicants"
+      ],
+      "level2": [
+        "Determine eligibility and requirements",
+        "Assess and determine applications",
+        "Issue licences, permits and certificates",
+        "Vary, renew, suspend and revoke",
+        "Maintain public registers"
+      ],
+      "technology": [
+        "TC01",
+        "TC03",
+        "TC05",
+        "TC08",
+        "TC09",
+        "TC10",
+        "TC15",
+        "TC17",
+        "TC04"
+      ]
+    },
+    {
+      "id": "BC06",
+      "number": "06",
+      "name": "Enforce compliance",
+      "type": "core",
+      "description": "Check that people and organisations meet their obligations and take proportionate action when they do not.",
+      "outcomes": [
+        "High levels of compliance",
+        "Harm prevented, and stopped quickly when it happens"
+      ],
+      "level2": [
+        "Plan risk-based regulation",
+        "Inspect, sample and audit",
+        "Gather intelligence and investigate",
+        "Take enforcement action",
+        "Manage appeals and sanctions"
+      ],
+      "technology": [
+        "TC08",
+        "TC09",
+        "TC11",
+        "TC15",
+        "TC16",
+        "TC17",
+        "TC10"
+      ]
+    },
+    {
+      "id": "BC07",
+      "number": "07",
+      "name": "Administer funds and grants",
+      "type": "core",
+      "description": "Design and run schemes that pay public money for public goods, from application to payment, verification and recovery.",
+      "outcomes": [
+        "Public money delivers environmental and economic outcomes",
+        "Payments are accurate, on time and protected from fraud"
+      ],
+      "level2": [
+        "Design schemes",
+        "Manage applications and agreements",
+        "Verify claims",
+        "Make payments",
+        "Recover payments and manage irregularities",
+        "Evaluate scheme outcomes"
+      ],
+      "technology": [
+        "TC01",
+        "TC14",
+        "TC08",
+        "TC09",
+        "TC13",
+        "TC15",
+        "TC17",
+        "TC04"
+      ]
+    },
+    {
+      "id": "BC08",
+      "number": "08",
+      "name": "Respond to incidents and crises",
+      "type": "core",
+      "description": "Prepare for, detect, respond to and recover from emergencies such as animal and plant disease outbreaks, floods, droughts and pollution.",
+      "outcomes": [
+        "Faster detection and containment",
+        "Reduced harm to people, animals, plants and the environment"
+      ],
+      "level2": [
+        "Plan and exercise for emergencies",
+        "Detect and assess incidents",
+        "Coordinate response",
+        "Contain and control",
+        "Recover and learn lessons"
+      ],
+      "technology": [
+        "TC12",
+        "TC15",
+        "TC18",
+        "TC04",
+        "TC11",
+        "TC16",
+        "TC17"
+      ]
+    },
+    {
+      "id": "BC09",
+      "number": "09",
+      "name": "Operate and deploy assets",
+      "type": "core",
+      "description": "Plan, build, operate, maintain and dispose of physical assets such as flood defences, laboratories, vessels, land and estate.",
+      "outcomes": [
+        "Assets are available and perform when needed",
+        "Whole-life value for money"
+      ],
+      "level2": [
+        "Plan and invest in assets",
+        "Build and commission assets",
+        "Operate assets",
+        "Inspect and maintain assets",
+        "Dispose of assets"
+      ],
+      "technology": [
+        "TC15",
+        "TC18",
+        "TC11",
+        "TC13",
+        "TC16"
+      ]
+    },
+    {
+      "id": "BC10",
+      "number": "10",
+      "name": "Set organisational direction",
+      "type": "supporting",
+      "description": "Set strategy and priorities, allocate investment, manage performance and risk, and govern the department and its arm's length bodies.",
+      "outcomes": [
+        "Clear priorities and accountable delivery",
+        "Investment aligned to outcomes"
+      ],
+      "level2": [
+        "Set strategy and priorities",
+        "Manage portfolio and investment",
+        "Manage performance and risk",
+        "Govern and assure",
+        "Design the operating model"
+      ],
+      "technology": [
+        "TC16",
+        "TC24",
+        "TC10"
+      ]
+    },
+    {
+      "id": "BC11",
+      "number": "11",
+      "name": "Provide shared services",
+      "type": "supporting",
+      "description": "Provide the people, finance, commercial, digital, data and technology, estates, legal and information services the rest of Defra relies on.",
+      "outcomes": [
+        "Efficient, consistent corporate services",
+        "Staff have the tools and support to do their jobs"
+      ],
+      "level2": [
+        "Manage people",
+        "Manage finance",
+        "Manage commercial and procurement",
+        "Provide digital, data and technology services",
+        "Manage estates and facilities",
+        "Manage information and records"
+      ],
+      "technology": [
+        "TC02",
+        "TC13",
+        "TC10",
+        "TC21",
+        "TC22",
+        "TC23",
+        "TC24"
+      ]
+    }
+  ],
+  "technology_domains": [
+    {
+      "id": "engage",
+      "name": "Engage and transact",
+      "description": "How users find us, prove who they are, tell us things and pay us."
+    },
+    {
+      "id": "operate",
+      "name": "Operate and decide",
+      "description": "How we process work, make decisions and keep records."
+    },
+    {
+      "id": "insight",
+      "name": "Data and insight",
+      "description": "How we collect, manage, share and learn from data and evidence."
+    },
+    {
+      "id": "platform",
+      "name": "Platform and integration",
+      "description": "The foundations every service is built and run on."
+    }
+  ],
+  "technology_capabilities": [
+    {
+      "id": "TC01",
+      "name": "Customer identity and access",
+      "domain": "engage",
+      "government_model": "service",
+      "status": "strategic",
+      "description": "Let citizens, businesses and their agents sign in, prove who they are and act on behalf of an organisation.",
+      "options": [
+        {
+          "name": "Defra Customer Identity (Defra ID), which uses GOV.UK One Login and Government Gateway as identity providers",
+          "url": "https://digital.defra.gov.uk/architecture-and-software-development/defra-customer-identity"
+        }
+      ],
+      "guardrail": "guardrails/identity-and-access.md"
+    },
+    {
+      "id": "TC02",
+      "name": "Staff identity and access",
+      "domain": "engage",
+      "government_model": "security",
+      "status": "strategic",
+      "description": "Single sign-on, role-based access and joiner/mover/leaver for Defra group staff and contractors.",
+      "options": [
+        {
+          "name": "Microsoft Entra ID"
+        }
+      ],
+      "guardrail": "guardrails/identity-and-access.md"
+    },
+    {
+      "id": "TC03",
+      "name": "Digital forms and applications",
+      "domain": "engage",
+      "government_model": "service",
+      "status": "emerging",
+      "description": "Capture structured information from users through accessible, GOV.UK design system compliant forms without bespoke front-end builds.",
+      "options": [
+        {
+          "name": "Defra Forms",
+          "url": "https://digital.defra.gov.uk/architecture-and-software-development/defra-forms"
+        },
+        {
+          "name": "GOV.UK Forms",
+          "url": "https://www.forms.service.gov.uk/"
+        }
+      ],
+      "guardrail": "guardrails/front-end-and-accessibility.md"
+    },
+    {
+      "id": "TC04",
+      "name": "Notifications",
+      "domain": "engage",
+      "government_model": "service",
+      "status": "strategic",
+      "description": "Send emails, text messages and letters to users.",
+      "options": [
+        {
+          "name": "GOV.UK Notify",
+          "url": "https://www.notifications.service.gov.uk/"
+        }
+      ]
+    },
+    {
+      "id": "TC05",
+      "name": "Payments and collections",
+      "domain": "engage",
+      "government_model": "service",
+      "status": "strategic",
+      "description": "Take card and other payments for fees, charges and penalties.",
+      "options": [
+        {
+          "name": "GOV.UK Pay",
+          "url": "https://www.payments.service.gov.uk/"
+        }
+      ]
+    },
+    {
+      "id": "TC06",
+      "name": "Content and publishing",
+      "domain": "engage",
+      "government_model": "service",
+      "status": "strategic",
+      "description": "Publish guidance, policy, consultations and news.",
+      "options": [
+        {
+          "name": "GOV.UK publishing",
+          "url": "https://www.gov.uk/"
+        },
+        {
+          "name": "Citizen Space (consultations)"
+        }
+      ]
+    },
+    {
+      "id": "TC07",
+      "name": "Customer and stakeholder relationship management",
+      "domain": "engage",
+      "government_model": "corporate",
+      "status": "strategic",
+      "description": "A single view of the customers, organisations and stakeholders we deal with, and our interactions with them.",
+      "options": [
+        {
+          "name": "Microsoft Dynamics 365 / Power Platform"
+        }
+      ]
+    },
+    {
+      "id": "TC08",
+      "name": "Case and workflow management",
+      "domain": "operate",
+      "government_model": "service",
+      "status": "strategic",
+      "description": "Route, track and complete work items (applications, inspections, investigations, claims) through configurable workflow.",
+      "options": [
+        {
+          "name": "Microsoft Dynamics 365 / Power Platform"
+        },
+        {
+          "name": "Workflow on the Core Delivery Platform for high-volume digital services"
+        }
+      ]
+    },
+    {
+      "id": "TC09",
+      "name": "Rules and decisioning",
+      "domain": "operate",
+      "government_model": "service",
+      "status": "emerging",
+      "description": "Express eligibility, risk scoring and business rules as versioned, testable artefacts rather than burying them in code.",
+      "options": [
+        {
+          "name": "Rules as code libraries within the service (default)"
+        }
+      ]
+    },
+    {
+      "id": "TC10",
+      "name": "Document and records management",
+      "domain": "operate",
+      "government_model": "data",
+      "status": "strategic",
+      "description": "Store, classify, retain and dispose of documents and records in line with the Public Records Act and retention schedules.",
+      "options": [
+        {
+          "name": "Microsoft 365 / SharePoint (with retention labels)"
+        },
+        {
+          "name": "Cloud object storage for service-generated documents"
+        }
+      ]
+    },
+    {
+      "id": "TC11",
+      "name": "Field work and inspection",
+      "domain": "operate",
+      "government_model": "service",
+      "status": "gap",
+      "description": "Plan, schedule and record inspections, surveys and sampling in the field, including offline mobile working and evidence capture.",
+      "options": []
+    },
+    {
+      "id": "TC12",
+      "name": "Incident and emergency management",
+      "domain": "operate",
+      "government_model": "service",
+      "status": "gap",
+      "description": "Detect, log, coordinate and report on incidents such as animal and plant disease outbreaks, floods and pollution events.",
+      "options": []
+    },
+    {
+      "id": "TC13",
+      "name": "Finance and enterprise resource planning",
+      "domain": "operate",
+      "government_model": "corporate",
+      "status": "strategic",
+      "description": "General ledger, purchase to pay, order to cash, HR and payroll.",
+      "options": [
+        {
+          "name": "Departmental ERP (shared services)"
+        }
+      ]
+    },
+    {
+      "id": "TC14",
+      "name": "Grants and scheme management",
+      "domain": "operate",
+      "government_model": "service",
+      "status": "emerging",
+      "description": "Configure schemes, take applications, manage agreements, verify claims and make and recover payments.",
+      "options": [
+        {
+          "name": "Reusable grants components on the Core Delivery Platform"
+        }
+      ]
+    },
+    {
+      "id": "TC15",
+      "name": "Geospatial and location services",
+      "domain": "insight",
+      "government_model": "data",
+      "status": "strategic",
+      "description": "Store, analyse, visualise and serve spatial data - land parcels, boundaries, designations, catchments and observations.",
+      "options": [
+        {
+          "name": "Defra Data Services Platform",
+          "url": "https://environment.data.gov.uk/"
+        },
+        {
+          "name": "Defra Interactive Map, an accessible mapping component (beta)",
+          "url": "https://digital.defra.gov.uk/architecture-and-software-development/defra-accessible-maps"
+        },
+        {
+          "name": "Ordnance Survey data via the Public Sector Geospatial Agreement",
+          "url": "https://www.ordnancesurvey.co.uk/customers/public-sector"
+        }
+      ],
+      "guardrail": "guardrails/data.md"
+    },
+    {
+      "id": "TC16",
+      "name": "Data platform and analytics",
+      "domain": "insight",
+      "government_model": "data",
+      "status": "emerging",
+      "description": "Ingest, store, transform and analyse data at scale with governed access for analysts and data scientists.",
+      "options": [
+        {
+          "name": "Defra strategic data platform"
+        }
+      ],
+      "guardrail": "guardrails/data.md"
+    },
+    {
+      "id": "TC17",
+      "name": "Reference and master data",
+      "domain": "insight",
+      "government_model": "data",
+      "status": "emerging",
+      "description": "Authoritative, shared records for the things many services depend on: customers, organisations, holdings, land parcels, species, locations.",
+      "options": [
+        {
+          "name": "Authoritative source per entity - see Defra on a page",
+          "url": "data/defra-on-a-page.md"
+        }
+      ],
+      "guardrail": "guardrails/data.md"
+    },
+    {
+      "id": "TC18",
+      "name": "Environmental monitoring and IoT",
+      "domain": "insight",
+      "government_model": "data",
+      "status": "gap",
+      "description": "Ingest and manage high-volume telemetry and observations from sensors, gauges, samples and earth observation.",
+      "options": []
+    },
+    {
+      "id": "TC19",
+      "name": "Data sharing and publishing",
+      "domain": "insight",
+      "government_model": "integration",
+      "status": "strategic",
+      "description": "Share data with partners through APIs and publish open data with good metadata.",
+      "options": [
+        {
+          "name": "Defra Data Services Platform",
+          "url": "https://environment.data.gov.uk/"
+        },
+        {
+          "name": "data.gov.uk",
+          "url": "https://www.data.gov.uk/"
+        }
+      ],
+      "guardrail": "guardrails/data.md"
+    },
+    {
+      "id": "TC20",
+      "name": "Artificial intelligence and machine learning",
+      "domain": "insight",
+      "government_model": "ai",
+      "status": "emerging",
+      "description": "Train, evaluate, deploy and monitor models, including generative AI, safely and transparently.",
+      "options": [
+        {
+          "name": "Approved cloud AI services within Defra cloud tenancies"
+        }
+      ],
+      "guardrail": "guardrails/ai.md"
+    },
+    {
+      "id": "TC21",
+      "name": "Application hosting and delivery platform",
+      "domain": "platform",
+      "government_model": "devops",
+      "status": "strategic",
+      "description": "Build, test, deploy and run services on a secure, observable, paved road with the undifferentiated heavy lifting done once.",
+      "options": [
+        {
+          "name": "Defra Core Delivery Platform (CDP)",
+          "url": "https://digital.defra.gov.uk/architecture-and-software-development/core-delivery-platform"
+        }
+      ],
+      "guardrail": "guardrails/hosting-and-platforms.md"
+    },
+    {
+      "id": "TC22",
+      "name": "API management and integration",
+      "domain": "platform",
+      "government_model": "integration",
+      "status": "strategic",
+      "description": "Publish, secure, discover and manage APIs and asynchronous messaging between services and with partners.",
+      "options": [
+        {
+          "name": "Platform API gateway and messaging on the Core Delivery Platform"
+        }
+      ],
+      "guardrail": "guardrails/apis-and-integration.md"
+    },
+    {
+      "id": "TC23",
+      "name": "Observability and security monitoring",
+      "domain": "platform",
+      "government_model": "security",
+      "status": "strategic",
+      "description": "Logs, metrics, traces, alerting and protective monitoring feeding the security operations centre.",
+      "options": [
+        {
+          "name": "Platform observability on the Core Delivery Platform"
+        },
+        {
+          "name": "Defra security operations centre (SOC)"
+        }
+      ],
+      "guardrail": "guardrails/observability-and-operations.md"
+    },
+    {
+      "id": "TC24",
+      "name": "Collaboration and productivity",
+      "domain": "platform",
+      "government_model": "foundation",
+      "status": "strategic",
+      "description": "Email, documents, meetings and team collaboration for staff.",
+      "options": [
+        {
+          "name": "Microsoft 365"
+        }
+      ]
+    }
+  ]
+}
