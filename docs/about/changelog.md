@@ -4,6 +4,11 @@
 
 ## October 2026
 
+### How the site is maintained
+
+- **[`MAINTAINERS.md`](https://github.com/howellsr/architecture/blob/main/MAINTAINERS.md)** sets out the roles (names to be confirmed), the two-week triage target, labels, the route for changing a Must (TDA review, then TGB approval), deprecation, releases, a monthly and quarterly review cadence, and the move to the DEFRA GitHub organisation.
+- Code owners are requested for review automatically, and CI now warns about any guardrail not reviewed for more than 12 months.
+
 ### Draft guardrails for research data and for failures
 
 Three new draft guardrails, for comment. They are Shoulds, so the number of Musts does not change.
