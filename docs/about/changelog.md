@@ -4,6 +4,17 @@
 
 ## October 2026
 
+### Joined up with the Defra Digital Service Manual
+
+The manual covers how to do the job and who to contact; this site covers architecture rules, decisions and evidence. A new page, [where things live](../contribute/where-things-live.md), sets out the split and lists the matching links between the two, which are now checked automatically.
+
+- **AI guardrails** link to the AI digital toolkit at the matching point: GR-AI-01 to the "check if AI is right for your idea" triage, GR-AI-02 to choosing a tool and keeping data safe, GR-AI-07 to AI security, and GR-AI-08 to GR-AI-11 to working with AI agents. The toolkit's AI Capability and Enablement (AICE) team is named.
+- **Accessibility, sustainability and forms guardrails** link to the matching manual pages, and [GR-HOST-01](../guardrails/hosting-and-platforms.md#gr-host-01) to the Core Delivery Platform.
+- **[Getting onto Defra platforms](../deliver/platforms.md)** links the Core Delivery Platform onboarding documentation and names the support route for Defra Customer Identity (also known as Defra ID), Defra Forms and the Defra Interactive Map.
+- **[Secure by Design](../security/secure-by-design.md)** says the authoritative lifecycle requirements are on the DDTS Portfolio Hub, owned by the Defra Security team, and presents this site's phase table as the architecture view of them.
+- **The home page** describes the DDTS doctrine as draft until the [approval status](approval-status.md) records it as endorsed.
+- New open questions on how solution design authorities map onto delivery groups and principal architects, how Must exceptions relate to the Delivery Architecture team's exception process, and whether the guardrails apply to off-the-shelf products and data platforms.
+
 ### Where architecture decisions are kept
 
 - **[Architecture decision records](../governance/architecture-decision-records.md#where-to-keep-them)** now separate team decisions, kept in each service repository, from Technical Design Authority (TDA) and Technology Governance Board (TGB) decisions, kept in an architecture decision register on the Defra architecture SharePoint site.

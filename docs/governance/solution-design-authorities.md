@@ -35,6 +35,13 @@ A delivery group or portfolio can request delegated authority from the TDA. It n
 
 Delegation is reviewed annually. An SDA that works well may have its scope widened.
 
+## Delivery groups and principal architects
+
+Defra delivery groups have their own [governance model](https://digital.defra.gov.uk/delivery-groups/follow-delivery-governance/governance-model), in which principal architects set the technology guardrails for the group in line with the enterprise architecture principles. The Delivery Architecture team tells each team who the principal architect for their delivery group is - see [architecture](https://digital.defra.gov.uk/architecture) in the Defra Digital Service Manual.
+
+!!! warning "To be confirmed"
+    **TODO:** how solution design authorities, the Technical Design Authority and the Technology Governance Board map onto Defra's delivery groups and their principal architects - for example, whether each delivery group has its own SDA and who leads it.
+
 ## Delivery partners and SDAs
 
 Partner architects often present to and contribute to SDAs. The decision, though, sits with the Defra-appointed SDA lead. Partners should expect their designs to be assessed against these guardrails and should record decisions as ADRs in Defra repositories.
