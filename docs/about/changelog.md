@@ -12,10 +12,15 @@ The [Defra Digital Service Manual](https://digital.defra.gov.uk/) is the place f
 - **Sign-in ([GR-IAM-01](../guardrails/identity-and-access.md#gr-iam-01))** now names Defra Customer Identity (Defra ID), which uses GOV.UK One Login and Government Gateway, instead of presenting One Login as an alternative.
 - **Approved technologies ([GR-DEV-01](../guardrails/software-development.md#gr-dev-01))** now follow the manual's software development standards and the Tools Radar.
 - **AI data ([GR-AI-02](../guardrails/ai.md#gr-ai-02))** now follows the AI digital toolkit's rules on using data with AI.
-- **[Non-functional requirements](../nfrs/index.md)** point to the service tiers and NFR list owned by business analysis. Whether to retire this site's catalogue is an open question.
+- **[Non-functional requirements](../nfrs/index.md)** point to the service tiers and NFR list owned by business analysis. This site's catalogue is kept for now, with the manual taking precedence.
 - **[Architecture patterns](../patterns/index.md)** are now called that, with a pointer to the manual's design patterns. The guardrails page explains that business analysis guardrails are different.
 - **[Getting onto Defra platforms](../deliver/platforms.md)** links each platform to the manual, adds the Defra Interactive Map and corrects CDP support and portal links.
 - [Working with architects](../deliver/working-with-architects.md) and [the architecture team](team.md) give the Delivery Architecture team's mailbox.
+
+### Spend control, investment and technology radars
+
+- [Governance](../governance/index.md#how-this-relates-to-other-assurance) now names the Portfolio Assurance Board (PAB) for spend control and InvestCo for investment approvals.
+- The [handrail](../handrail/index.md#technology-radars) links to Defra's tools radar of approved software tools, and to the Emerging Technology Radar 2026 and its four themes. Both need a Defra network connection and sign-in.
 
 ### Working with architects
 
