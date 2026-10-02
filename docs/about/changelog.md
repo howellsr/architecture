@@ -4,6 +4,11 @@
 
 ## October 2026
 
+### Content style
+
+- **New page: [content style](../contribute/content-style.md)** - the house rules on top of the GOV.UK style guide, how to write a guardrail and a pattern, diagrams and a glossary of the terms this site uses.
+- Pull requests now get **prose warnings** from Vale (words to avoid, filler words and exclamation marks) and a check that headings are in sentence case. They never block a merge.
+
 ### Draft guardrails for research data and for failures
 
 Three new draft guardrails, for comment. They are Shoulds, so the number of Musts does not change.
