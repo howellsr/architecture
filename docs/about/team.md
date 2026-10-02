@@ -31,7 +31,7 @@ Not every team has its own architect. Teams without one get support from their s
 
 ## Developing as an architect
 
-See [developing architecture at Defra](architecture-profession.md) for architecture roles and skills, the Architecture Community and its All Architecture meetups.
+See [developing architecture at Defra](architecture-profession.md) for the three areas of architecture at Defra - Delivery Architecture, Technical Architecture and Enterprise Architecture - and for architecture roles and skills, the Architecture Community and its All Architecture meetups.
 
 ## How to reach us
 
