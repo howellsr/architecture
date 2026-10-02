@@ -15,6 +15,10 @@ The manual covers how to do the job and who to contact; this site covers archite
 - **The home page** describes the DDTS doctrine as draft until the [approval status](approval-status.md) records it as endorsed.
 - New open questions on how solution design authorities map onto delivery groups and principal architects, how Must exceptions relate to the Delivery Architecture team's exception process, and whether the guardrails apply to off-the-shelf products and data platforms.
 
+### Developing architecture at Defra
+
+- **New page: [developing architecture at Defra](architecture-profession.md)** - architecture roles and skills, the Architecture Community and its All Architecture meetups, and how to get involved. Linked from the home page and the architecture team page.
+
 ### Where architecture decisions are kept
 
 - **[Architecture decision records](../governance/architecture-decision-records.md#where-to-keep-them)** now separate team decisions, kept in each service repository, from Technical Design Authority (TDA) and Technology Governance Board (TGB) decisions, kept in an architecture decision register on the Defra architecture SharePoint site.
