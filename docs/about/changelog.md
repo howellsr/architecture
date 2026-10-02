@@ -4,6 +4,10 @@
 
 ## October 2026
 
+### Developing architecture at Defra
+
+- **New page: [developing architecture at Defra](architecture-profession.md)** - architecture roles and skills, the Architecture Community and its All Architecture meetups, and how to get involved. Linked from the home page and the architecture team page.
+
 ### Aligned with the Defra Digital Service Manual
 
 The [Defra Digital Service Manual](https://digital.defra.gov.uk/) is the place for how to run a service in Defra. This site now links to it rather than repeating or contradicting it, and keeps to architecture.
