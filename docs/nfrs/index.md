@@ -8,6 +8,9 @@ If functional requirements are the "what", non-functional requirements are the "
 
 <!-- nfrs:status -->
 
+!!! warning "To be confirmed"
+    **TODO:** whether this site's service tiers and NFR catalogue should be retired in favour of the DDTS lists maintained by the business analysis community, or kept in step with them.
+
 ## Start here
 
 <div class="grid cards" markdown>

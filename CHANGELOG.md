@@ -31,6 +31,7 @@ To release a version, change `## [Unreleased]` to `## [X.Y.Z] - YYYY-MM-DD` and 
 
 ### Changed
 
+- Aligned with the Defra Digital Service Manual: `GR-IAM-01` names Defra Customer Identity (Defra ID); `GR-DEV-01` follows the manual's approved technologies; `GR-AI-02` follows the AI digital toolkit's data rules; Deliver a service, governance, platforms, NFRs, patterns and the security, accessibility and sustainability guardrail pages link to the manual instead of repeating it. Platforms now include the Defra Interactive Map.
 - When Must guardrails apply: `GR-DATA-02` now also applies in discovery; `GR-HOST-02`, `GR-OPEN-01` and `GR-SEC-09` no longer apply in discovery; `GR-HOST-03`, `GR-IAM-02`, `GR-IAM-03`, `GR-OPS-02`, `GR-SEC-04`, `GR-SEC-05`, `GR-DEV-04` and `GR-DEV-06` no longer apply in alpha.
 
 ### Fixed

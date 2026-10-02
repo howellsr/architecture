@@ -4,6 +4,19 @@
 
 ## October 2026
 
+### Aligned with the Defra Digital Service Manual
+
+The [Defra Digital Service Manual](https://digital.defra.gov.uk/) is the place for how to run a service in Defra. This site now links to it rather than repeating or contradicting it, and keeps to architecture.
+
+- **[Deliver a service](../deliver/index.md)** now points to the manual for service assessments, operational service readiness, spend control, governance, and design, research and content.
+- **Sign-in ([GR-IAM-01](../guardrails/identity-and-access.md#gr-iam-01))** now names Defra Customer Identity (Defra ID), which uses GOV.UK One Login and Government Gateway, instead of presenting One Login as an alternative.
+- **Approved technologies ([GR-DEV-01](../guardrails/software-development.md#gr-dev-01))** now follow the manual's software development standards and the Tools Radar.
+- **AI data ([GR-AI-02](../guardrails/ai.md#gr-ai-02))** now follows the AI digital toolkit's rules on using data with AI.
+- **[Non-functional requirements](../nfrs/index.md)** point to the service tiers and NFR list owned by business analysis. Whether to retire this site's catalogue is an open question.
+- **[Architecture patterns](../patterns/index.md)** are now called that, with a pointer to the manual's design patterns. The guardrails page explains that business analysis guardrails are different.
+- **[Getting onto Defra platforms](../deliver/platforms.md)** links each platform to the manual, adds the Defra Interactive Map and corrects CDP support and portal links.
+- [Working with architects](../deliver/working-with-architects.md) and [the architecture team](team.md) give the Delivery Architecture team's mailbox.
+
 ### Working with architects
 
 - **New page: [working with architects](../deliver/working-with-architects.md)** for service designers, interaction designers, content designers and user researchers - which design decisions are also architecture decisions, when to involve an architect in each phase, what to bring and what architects do in return. Linked from the home page and Deliver a service.
