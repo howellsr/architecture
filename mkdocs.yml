@@ -264,6 +264,8 @@ nav:
   - Standards and links: standards/index.md
   - Contribute:
       - contribute/index.md
+      - Content style: contribute/content-style.md
+      - Site design: contribute/site-design.md
       - Where things live: contribute/where-things-live.md
       - Decisions about this site:
           - adr/index.md

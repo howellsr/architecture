@@ -11,7 +11,7 @@
 
 ## Writing style
 
-We follow the [GOV.UK style guide](https://www.gov.uk/guidance/style-guide). In short:
+We follow the [GOV.UK style guide](https://www.gov.uk/guidance/style-guide). The [content style](content-style.md) page has the house rules, how to write a guardrail and a pattern, diagrams and a glossary. In short:
 
 - plain English, short sentences, active voice
 - write for a busy delivery team: lead with what they need to do
@@ -38,7 +38,8 @@ Most changes are to Markdown in `docs/` or to the YAML data files. You rarely ne
 | `hooks/` | Small Python scripts that check the data and build tables from it | Site maintainers |
 | `overrides/`, `docs/stylesheets/`, `docs/javascripts/` | Home page hero, theme, decision check and library filter | Site maintainers |
 | `tests/` | Content checks (`pytest`) and the accessibility check (`npm test`) | Site maintainers |
-| `.github/` | CI workflow, pull request and issue templates | Site maintainers |
+| `.github/` | CI workflows, pull request and issue templates, code owners and labels | Site maintainers |
+| [`MAINTAINERS.md`](https://github.com/howellsr/architecture/blob/main/MAINTAINERS.md) | Roles, triage, labels, the route for changing a Must, releases and review cadence | Site maintainers |
 
 ## Common tasks
 
@@ -198,6 +199,7 @@ Every pull request runs these checks. You can run them locally before you push:
 | Content | `pytest` | Broken references between doctrine, principles, guardrails, capabilities and NFRs; diagrams without text alternatives |
 | Build | `mkdocs build --strict` | Broken links and anchors, invalid data, missing pages |
 | Accessibility | `npm ci && npx playwright install chromium && npm test` (after a build) | WCAG 2.2 AA failures on every page in light and dark mode |
+| Prose (warnings only) | `vale docs` and `python scripts/heading_case.py` | Words to avoid, filler words, exclamation marks and headings not in sentence case - see [prose checks](content-style.md#prose-checks) |
 
 Merges to `main` are published to [howellsr.github.io/architecture](https://howellsr.github.io/architecture/) once all checks pass. A separate weekly job checks every external link and opens an issue if any are broken.
 
