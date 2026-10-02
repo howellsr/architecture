@@ -39,6 +39,8 @@ Names are still to be confirmed. Until they are, the repository owner covers eve
 
 The labels are defined in `.github/labels.yml`. A test checks that every label used in an issue form or workflow is defined there.
 
+To create or update the labels, and to open an issue for each row of the [guardrail backlog](docs/about/roadmap.md#guardrail-backlog), run the **backlog-issues** workflow from the Actions tab. It reads the backlog from the roadmap page, skips issues that already exist, and only runs in `DEFRA/architecture`. Run it again after adding a row to the backlog. Each row on the roadmap links to its issue.
+
 ## Changing a Must guardrail
 
 1. Open a pull request with the change and the `must-change` label. Do not merge it.

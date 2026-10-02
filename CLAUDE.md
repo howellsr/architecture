@@ -24,7 +24,7 @@ Guidance for AI assistants working in this repository: the Defra architecture si
 | `includes/abbreviations.md` | Abbreviation tooltips, appended to every page |
 | `overrides/`, `docs/stylesheets/`, `docs/javascripts/` | Templates, theme and interactive tools |
 | `tests/` | `test_content.py` (pytest) and `accessibility.js` (axe, run by `npm test`) |
-| `scripts/` | Release notes and PDF, review-due and heading-case warnings, redirects |
+| `scripts/` | Release notes and PDF, review-due and heading-case warnings, redirects, backlog issues |
 
 ## Commands
 

@@ -14,6 +14,7 @@ To release a version, change `## [Unreleased]` to `## [X.Y.Z] - YYYY-MM-DD` and 
 
 ### Added
 
+- A `backlog-issues` workflow, run by hand, creates the labels in `.github/labels.yml` and an issue for each row of the guardrail backlog, read from the roadmap page. Each backlog row links to its issue, and tests check the links and that every link in an issue is a full address.
 - `CLAUDE.md` with the repository's ground rules, layout, commands and gotchas for AI assistants, kept under 80 lines by a test.
 - Issue forms for a new pattern, answering an open question and feedback by role, and a pull request checklist covering unchanged ids, the changelog, checks and \"To be confirmed\" boxes. Tests keep the feedback roles in step with `delivery/roles.yaml`.
 - Site design page for maintainers: hooks, templates, theme tokens, components and interactive tools, with a test that every hook is described.

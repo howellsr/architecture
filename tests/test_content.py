@@ -813,7 +813,8 @@ def test_only_defra_publishes():
     """Forks run the checks but never deploy, release or raise link-check issues, so they cannot overwrite anything."""
     guard = "github.repository == 'DEFRA/architecture'"
     workflows = os.path.join(ROOT, ".github", "workflows")
-    for name, job in [("ci.yml", "deploy"), ("release.yml", "release"), ("links.yml", "links")]:
+    jobs = [("ci.yml", "deploy"), ("release.yml", "release"), ("links.yml", "links"), ("backlog-issues.yml", "issues")]
+    for name, job in jobs:
         with open(os.path.join(workflows, name), encoding="utf-8") as handle:
             text = handle.read()
         block = re.search(rf"^  {job}:\n((?:    .*\n|\s*\n)+)", text, re.M)
@@ -842,3 +843,36 @@ def test_lint_rules_support_the_eslint_version():
     eslint = packages["node_modules/eslint"]["version"]
     spec = packages["node_modules/neostandard"]["peerDependencies"]["eslint"]
     assert _satisfies(eslint, spec), f"ESLint {eslint} is outside neostandard's range {spec}; pin it in package.json"
+
+
+def _backlog():
+    spec = importlib.util.spec_from_file_location("backlog_issues", os.path.join(ROOT, "scripts", "backlog_issues.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    with open(module.ROADMAP, encoding="utf-8") as handle:
+        return module, module.rows(handle.read())
+
+
+def test_backlog_rows_link_to_their_issues():
+    """Each guardrail backlog row links to the issue the backlog-issues workflow creates for it."""
+    module, rows = _backlog()
+    assert len(rows) >= 10, "the guardrail backlog table on the roadmap could not be read"
+    titles = [module.issue(r)["title"] for r in rows]
+    assert len(titles) == len(set(titles)), "two backlog rows have the same name, so they would share an issue"
+    for row in rows:
+        link = f"**[{row['name']}]({module.search_url(row['name'])})**"
+        assert row["cell"].startswith(link), f"backlog row {row['name']!r} must start with {link}"
+
+
+def test_backlog_issues_use_absolute_links():
+    """Links in an issue are not relative to the site, so every link in a backlog issue must be a full address."""
+    module, rows = _backlog()
+    for row in rows:
+        item = module.issue(row)
+        assert item["labels"] == ["guardrail-backlog"]
+        for target in re.findall(r"\]\(([^)]+)\)", item["body"]):
+            assert target.startswith("https://"), f"{item['title']}: relative link {target}"
+            if target.startswith(module.SITE):
+                page = target[len(module.SITE) :].split("#")[0].rstrip("/") or "index"
+                docs = os.path.join(ROOT, "docs", page)
+                assert os.path.exists(docs + ".md") or os.path.exists(os.path.join(docs, "index.md")), target
