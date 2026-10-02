@@ -1,6 +1,6 @@
 {
   "description": "Defra architecture guardrails and principles with their metadata",
-  "source": "https://github.com/howellsr/architecture",
+  "source": "https://github.com/DEFRA/architecture",
   "guardrails": [
     {
       "id": "GR-PRIN-01",
