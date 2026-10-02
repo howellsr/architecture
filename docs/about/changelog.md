@@ -4,6 +4,12 @@
 
 ## October 2026
 
+### Where architecture decisions are kept
+
+- **[Architecture decision records](../governance/architecture-decision-records.md#where-to-keep-them)** now separate team decisions, kept in each service repository, from Technical Design Authority (TDA) and Technology Governance Board (TGB) decisions, kept in an architecture decision register on the Defra architecture SharePoint site.
+- **[Raise a decision for review](../governance/architecture-decision-records.md#raise-a-decision-for-review)** by email, with no GitHub account needed. During alpha the address is a holding address; the real mailbox and the register's address are open questions.
+- [ADR 0005](../adr/0005-enterprise-decisions-in-sharepoint.md) records this decision.
+
 ### Working with architects
 
 - **New page: [working with architects](../deliver/working-with-architects.md)** for service designers, interaction designers, content designers and user researchers - which design decisions are also architecture decisions, when to involve an architect in each phase, what to bring and what architects do in return. Linked from the home page and Deliver a service.
