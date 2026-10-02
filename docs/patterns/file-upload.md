@@ -46,7 +46,7 @@ How it works:
 
 - **The limits before they start.** Above the upload control, say which file types you accept and the largest size, so users do not find out by failing. Use the GOV.UK Design System [file upload](https://design-system.service.gov.uk/components/file-upload/) component.
 - **A short wait while the file is checked.** After upload, show that the file is being checked, for example "Checking your file". Most scans take seconds, but the wait must be visible and must not look like the page has frozen.
-- **The result for each file.** Show each file's name with its status, such as "Uploaded" or "There is a problem with this file", and let users remove a file or add another. The [add multiple things](https://design-system.service.gov.uk/patterns/add-multiple-things/) pattern helps when users upload several files.
+- **The result for each file.** Show each file's name with its status, such as "Uploaded" or "There is a problem with this file", and let users remove a file or add another.
 - **What happens if they carry on before the check finishes.** Either they cannot continue until every file has passed, or they can continue and are told a file is still being checked. Choose one with the team, and test it.
 
 What users do not see: the quarantine and clean stores, or the scanner. They see only whether each file was accepted.
