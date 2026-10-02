@@ -27,21 +27,13 @@ platforms:
   - id: defra-id
     name: Defra Customer Identity (also known as Defra ID or IDMv2)
     capability: TC01
-    gives: Sign-in once to many Defra services for external users and the organisations they act for. It uses GOV.UK One Login and HMRC's Government Gateway as identity providers, offers invitation-only access for trusted third parties, and stores users' contact details, organisation accounts and the relationships between them centrally.
+    gives: Sign-in once to many Defra services for external users and the organisations they act for. It uses GOV.UK One Login and HMRC's Government Gateway as identity providers, offers invitation-only access for trusted third parties, and stores users' contact details, organisation accounts and the relationships between them centrally. Defra services get GOV.UK One Login through Customer Identity rather than integrating with it directly.
     request: Talk to the Delivery Architecture team in discovery about the level of identity assurance you need and how users act for organisations ([GR-IAM-01](guardrails/identity-and-access.md#gr-iam-01)).
     lead_time: tbc
     support: The Customer Identity team - contact details are in the Defra Digital Service Manual
     docs: https://defra.sharepoint.com/sites/Community3868/SitePages/Customer%20Identity.aspx
     docs_note: Defra SharePoint - needs a Defra account.
     service_manual: https://digital.defra.gov.uk/architecture-and-software-development/defra-customer-identity
-  - id: one-login
-    name: GOV.UK One Login
-    capability: TC01
-    gives: Cross-government sign-in and identity verification. Defra Customer Identity uses GOV.UK One Login as one of its identity providers, so most Defra services get One Login through Customer Identity rather than integrating with it directly.
-    request: Talk to the Delivery Architecture team before integrating with GOV.UK One Login directly rather than through Defra Customer Identity.
-    lead_time: tbc
-    support: tbc
-    docs: https://docs.sign-in.service.gov.uk/
   - id: defra-forms
     name: Defra Forms
     capability: TC03
