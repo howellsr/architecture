@@ -11,22 +11,27 @@ guardrail_defaults:
 guardrails:
   GR-SUS-01:
     phases: [discovery, alpha]
+    lead_roles: [technical-architect]
     evidence: Environmental impact recorded in ADRs for hosting and technology choices
     tcop_points: [12]
   GR-SUS-02:
     phases: [beta, live]
+    lead_roles: [developer]
     evidence: Autoscaling and out-of-hours schedules for non-production environments
     tcop_points: [12]
   GR-SUS-03:
     phases: [alpha]
+    lead_roles: [technical-architect]
     evidence: Region and service choice recorded with its carbon intensity
     tcop_points: [12]
   GR-SUS-04:
     phases: [alpha, beta, live]
+    lead_roles: [developer, interaction-designer]
     evidence: Data retention settings and page weight measurements
     tcop_points: [12]
   GR-SUS-05:
     phases: [live]
+    lead_roles: [performance-analyst, technical-architect]
     evidence: Carbon footprint reported alongside cost
     tcop_points: [12]
 ---
@@ -37,9 +42,13 @@ guardrails:
 
 Relates to TCoP point 12.
 
+Defra services must also meet a 15th point of the Service Standard, [deliver a sustainable service](https://digital.defra.gov.uk/sustainability), including a sustainability statement against the [6 objectives in Defra's digital sustainability strategy](https://digital.defra.gov.uk/sustainability/objectives). Use the Defra Digital Service Manual for how to do that. These guardrails cover the architecture decisions that contribute to it.
+
 ## GR-SUS-01 Consider sustainability in design decisions {#gr-sus-01}
 
 <span class="rfc rfc--should">Should</span> Include environmental impact as a factor in ADRs for hosting, architecture and technology choices.
+
+**In the Defra Digital Service Manual:** [assess risks and record sustainability actions](https://digital.defra.gov.uk/sustainability/process) - record the decisions in your sustainability statement as well as your ADRs.
 
 ## GR-SUS-02 Right-size and switch off {#gr-sus-02}
 
@@ -56,3 +65,5 @@ Relates to TCoP point 12.
 ## GR-SUS-05 Measure and report {#gr-sus-05}
 
 <span class="rfc rfc--could">Could</span> Track the carbon footprint of your service using cloud provider tooling and report it alongside cost.
+
+**In the Defra Digital Service Manual:** the [metrics for each of Defra's six objectives](https://digital.defra.gov.uk/sustainability/metrics).

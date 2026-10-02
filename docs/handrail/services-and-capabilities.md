@@ -89,7 +89,7 @@ Colleagues applying the taxonomy in the Environment Agency found that "categoris
 
 ### Platform
 
-In the taxonomy, a platform is one kind of **component**. In architecture and engineering we also treat shared platforms, such as the Core Delivery Platform or Defra ID, as **products** in their own right, with their own users (delivery teams) and product owners. Both views are useful. Say which you mean.
+In the taxonomy, a platform is one kind of **component**. In architecture and engineering we also treat shared platforms, such as the Core Delivery Platform or Defra Customer Identity, as **products** in their own right, with their own users (delivery teams) and product owners. Both views are useful. Say which you mean.
 
 ### Component and "service" in software
 

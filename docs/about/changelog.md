@@ -8,6 +8,95 @@
 
 - **New draft page: [services and capabilities](../handrail/services-and-capabilities.md).** It uses the definitions from Defra's six-level service taxonomy - outcomes, whole services and services, products, common business capabilities, components and data - and shows where the business capability model, technology capabilities and Defra on a page fit into it. It also explains where architecture uses words such as capability, platform and "service" differently. Definitions are context-specific and we will keep iterating them with service design and product colleagues.
 
+### Draft guardrails for research data and for failures
+
+Three new draft guardrails, for comment. They are Shoulds, so the number of Musts does not change.
+
+- **[GR-DATA-10 Handle research data safely](../guardrails/data.md#gr-data-10)**, led by user researchers: consent, approved storage, deletion, approved research tools ([GR-TECH-04](../guardrails/choosing-technology.md#gr-tech-04)) and DPIA screening. It links to the user research standards in the Defra Digital Service Manual rather than repeating them.
+- **[GR-DATA-11 No real personal data in prototypes](../guardrails/data.md#gr-data-11)**.
+- **[GR-FE-07 Tell users what is happening when things fail or are slow](../guardrails/front-end-and-accessibility.md#gr-fe-07)**, led by content designers and developers, the user-facing side of [GR-OPS-04](../guardrails/observability-and-operations.md#gr-ops-04).
+
+All three have evidence for each phase and are in the [guardrail backlog](roadmap.md#guardrail-backlog) as drafts for comment.
+
+### User experience in patterns
+
+- **Every [architecture pattern](../patterns/index.md) now has three sections for designers and researchers:** what users see, content to design, and what to test with users. They link to GOV.UK Design System patterns and components where they exist.
+- Written in full for [asynchronous submission](../patterns/async-submission.md#what-users-see) (reference number, what happens next, how long, delayed processing and duplicate submissions), [file upload](../patterns/file-upload.md#what-users-see) (the scanning wait, rejected files, and size and type limits up front) and [acting on behalf](../patterns/acting-on-behalf.md#what-users-see) (choosing who you act for, missing permissions, and agent and owner wording), and for the [worked example](../patterns/worked-example/index.md#what-users-see).
+- The other two patterns have the sections with a "To be confirmed" box. The pattern catalogue shows which are written.
+
+### Smaller changes
+
+- Abbreviation tooltips no longer appear inside guardrail ids such as GR-API-05, or next to their own expansion such as "Technical Design Authority (TDA)", where screen readers could read the expansion twice.
+- [Raise a decision for review](../governance/architecture-decision-records.md#raise-a-decision-for-review) now uses the StrategicEnterpriseArchitecture@defra.gov.uk mailbox instead of the alpha holding address.
+- The question of whether the guardrails apply to Defra's arm's length bodies is now asked once, on the [guardrails overview](../guardrails/index.md#arms-length-bodies), instead of on each of the 15 area pages. The [open questions](open-questions.md) page lists it once.
+- [Getting onto Defra platforms](../deliver/platforms.md#pay) now links GOV.UK Pay's public support page.
+
+### Version 0.2.0 released
+
+- **[Version 0.2.0](releases.md)** is the first release with a PDF of every guardrail attached, to cite in contracts and assessments. It includes everything listed below. The banner on every page now shows 0.2.0 as the version in force.
+
+### Joined up with the Defra Digital Service Manual
+
+The manual covers how to do the job and who to contact; this site covers architecture rules, decisions and evidence. A new page, [where things live](../contribute/where-things-live.md), sets out the split and lists the matching links between the two, which are now checked automatically.
+
+- **AI guardrails** link to the AI digital toolkit at the matching point: GR-AI-01 to the "check if AI is right for your idea" triage, GR-AI-02 to choosing a tool and keeping data safe, GR-AI-07 to AI security, and GR-AI-08 to GR-AI-11 to working with AI agents. The toolkit's AI Capability and Enablement (AICE) team is named.
+- **Accessibility, sustainability and forms guardrails** link to the matching manual pages, and [GR-HOST-01](../guardrails/hosting-and-platforms.md#gr-host-01) to the Core Delivery Platform.
+- **[Getting onto Defra platforms](../deliver/platforms.md)** links the Core Delivery Platform onboarding documentation and names the support route for Defra Customer Identity (also known as Defra ID), Defra Forms and the Defra Interactive Map. GOV.UK One Login no longer has its own section, because Defra services use it through Defra Customer Identity.
+- **[Secure by Design](../security/secure-by-design.md)** says the authoritative lifecycle requirements are on the DDTS Portfolio Hub, owned by the Defra Security team, and presents this site's phase table as the architecture view of them.
+- **The home page** describes the DDTS doctrine as draft until the [approval status](approval-status.md) records it as endorsed.
+- **[Developing architecture at Defra](architecture-profession.md#architecture-at-defra)** now describes the three areas of architecture: Delivery Architecture in the delivery groups, Technical Architecture in Group Infrastructure and Operations (GIO), and Enterprise Architecture in the CTO Office.
+- **[Solution design authorities](../governance/solution-design-authorities.md#delivery-groups-and-principal-architects)** now say how governance fits together: the TGB agrees strategies, the TDA is the technical decision-making authority and grants authority to SDAs, and in an SDA the principal architect is accountable for decisions that align with a roadmap agreed at the TDA, follow the principles and stay within the guardrails.
+- New open questions on how Must exceptions relate to the Delivery Architecture team's exception process, and whether the guardrails apply to off-the-shelf products and data platforms.
+
+### Developing architecture at Defra
+
+- **New page: [developing architecture at Defra](architecture-profession.md)** - architecture roles and skills, the Architecture Community and its All Architecture meetups, and how to get involved. Linked from the home page and the architecture team page.
+
+### Where architecture decisions are kept
+
+- **[Architecture decision records](../governance/architecture-decision-records.md#where-to-keep-them)** now separate team decisions, kept in each service repository, from Technical Design Authority (TDA) and Technology Governance Board (TGB) decisions, kept in an architecture decision register on the Defra architecture SharePoint site.
+- **[Raise a decision for review](../governance/architecture-decision-records.md#raise-a-decision-for-review)** by email, with no GitHub account needed. During alpha the address is a holding address; the real mailbox and the register's address are open questions.
+- [ADR 0005](../adr/0005-enterprise-decisions-in-sharepoint.md) records this decision.
+
+### Aligned with the Defra Digital Service Manual
+
+The [Defra Digital Service Manual](https://digital.defra.gov.uk/) is the place for how to run a service in Defra. This site now links to it rather than repeating or contradicting it, and keeps to architecture.
+
+- **[Deliver a service](../deliver/index.md)** now points to the manual for service assessments, operational service readiness, spend control, governance, and design, research and content.
+- **Sign-in ([GR-IAM-01](../guardrails/identity-and-access.md#gr-iam-01))** now names Defra Customer Identity (Defra ID), which uses GOV.UK One Login and Government Gateway, instead of presenting One Login as an alternative.
+- **Approved technologies ([GR-DEV-01](../guardrails/software-development.md#gr-dev-01))** now follow the manual's software development standards and the Tools Radar.
+- **AI data ([GR-AI-02](../guardrails/ai.md#gr-ai-02))** now follows the AI digital toolkit's rules on using data with AI.
+- **[Non-functional requirements](../nfrs/index.md)** point to the service tiers and NFR list owned by business analysis. This site's catalogue is kept for now, with the manual taking precedence.
+- **[Architecture patterns](../patterns/index.md)** are now called that, with a pointer to the manual's design patterns. The guardrails page explains that business analysis guardrails are different.
+- **[Getting onto Defra platforms](../deliver/platforms.md)** links each platform to the manual, adds the Defra Interactive Map and corrects CDP support and portal links.
+- [Working with architects](../deliver/working-with-architects.md) and [the architecture team](team.md) give the Delivery Architecture team's mailbox.
+
+### Fewer Must guardrails
+
+- **There are now 29 Must guardrails, down from 55.** A guardrail is a Must only where law or mandatory government policy requires it, it is a baseline security control, or it puts a [DDTS doctrine](../principles/doctrine.md) non-negotiable into practice. The other 26 are now Shoulds: still the strong default, but you can depart from them with a recorded reason rather than an exception. We will make guardrails Musts again where feedback and real-world experience show they need to be. See [ADR 0004](../adr/0004-musts-only-where-required.md).
+- Alpha now has 18 Musts (was 37) and beta 25 (was 50).
+
+### Spend control, investment and technology radars
+
+- [Governance](../governance/index.md#how-this-relates-to-other-assurance) now names the Portfolio Assurance Board (PAB) for spend control and InvestCo for investment approvals.
+- The [handrail](../handrail/index.md#technology-radars) links to Defra's tools radar of approved software tools, and to the Emerging Technology Radar 2026 and its four themes. Both need a Defra network connection and sign-in.
+
+### Working with architects
+
+- **New page: [working with architects](../deliver/working-with-architects.md)** for service designers, interaction designers, content designers and user researchers - which design decisions are also architecture decisions, when to involve an architect in each phase, what to bring and what architects do in return. Linked from the home page and Deliver a service.
+- [The architecture team](team.md) page now explains the architect's place in a multidisciplinary team.
+
+### Who leads each guardrail
+
+- **Every guardrail now names the roles that lead it**, using DDaT role names - for example content designers lead [Welsh language support](../guardrails/front-end-and-accessibility.md#gr-fe-06), and service designers and user researchers lead [human oversight of AI](../guardrails/ai.md#gr-ai-03).
+- **[Guardrails by role](../deliver/roles/index.md):** a page for each role, listing its guardrails phase by phase, the patterns that help and when to work with an architect.
+- The [guardrail library](../guardrails/library.md) can now be filtered by role.
+
+### Evidence that matches the phase
+
+- **Every Must guardrail now says what to show in each phase**: in discovery the intent or constraint identified, in alpha the design or plan, in beta what was built and tested, and in live how it is operated and reviewed - plus what to show for a significant change or when retiring a service. The [phase pages](../deliver/index.md) and evidence checklists show the evidence for that phase, so alpha no longer asks for a published accessibility statement or the date of the last recovery test.
+- **Fewer, better-placed Musts per phase.** We re-checked when each Must applies. Discovery now lists 11 Musts (was 13) and alpha 37 (was 45). Beta (50) and live (49) are unchanged.
+
 ### Automated guardrail checks
 
 - **[Check your repository automatically](../deliver/guardrail-check.md):** a GitHub Action that checks a repository against GR-OPEN-02, GR-DEV-08, GR-API-02, GR-OPEN-03, GR-DEV-03, GR-DEV-06 and GR-DEV-09, and writes a report naming each guardrail. Each of those guardrails now names the check as its automated check.

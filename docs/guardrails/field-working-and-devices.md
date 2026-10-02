@@ -10,19 +10,27 @@ guardrail_defaults:
 guardrails:
   GR-FIELD-01:
     phases: [discovery, alpha]
+    lead_roles: [user-researcher, service-designer]
     evidence: User research on the working environment, and the device choice recorded in an ADR
     service_standard_points: [1]
   GR-FIELD-02:
     phases: [alpha, beta, live]
+    lead_roles: [interaction-designer, developer]
     evidence: Field journeys tested with no connection, including sync after reconnecting and conflict handling
     service_standard_points: [5]
   GR-FIELD-03:
     phases: [alpha, beta, live]
+    lead_roles: [security-architect]
     evidence: Devices enrolled in Defra device management, with encryption, patching and remote wipe confirmed
+    evidence_by_phase:
+      alpha: Device management approach agreed for the devices the service will use
+      beta: Devices enrolled in Defra device management, with encryption, patching, screen lock and remote wipe confirmed
+      live: Device compliance monitored, and lost devices wiped
     tcop_points: [6]
     sbd_principles: [7, 8]
   GR-FIELD-04:
     phases: [discovery, alpha]
+    lead_roles: [user-researcher, technical-architect]
     evidence: Connectivity in the places the service will be used checked, and the approach recorded
 ---
 
@@ -53,7 +61,7 @@ Puts architecture principle [8. Right tools, right place](../principles/architec
 
 ## GR-FIELD-03 Manage and secure every device {#gr-field-03}
 
-<span class="rfc rfc--must">Must</span> Devices that hold or access Defra data are enrolled in Defra device management, encrypted, kept patched, protected by a screen lock and able to be wiped remotely if lost.
+<span class="rfc rfc--should">Should</span> Devices that hold or access Defra data are enrolled in Defra device management, encrypted, kept patched, protected by a screen lock and able to be wiped remotely if lost.
 
 **Why:** field devices are lost and stolen more often than office equipment, and may hold personal and sensitive data.
 

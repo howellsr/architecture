@@ -11,7 +11,22 @@ Defra delivers hundreds of services across the core department and its arm's len
 - **make Defra easier to work with** - delivery partners know what we expect before they start
 - **reduce risk** by building in security, accessibility, data protection and sustainability from the start
 
-Guardrails are **not** a gate. They are the road with the barriers at the edge: you can drive as fast as you like in the middle.
+Guardrails are **not** a gate.
+
+!!! note "Not the same as business analysis guardrails"
+    The [business analysis guardrails](https://digital.defra.gov.uk/business-analysis/guardrails) in the Defra Digital Service Manual are a separate quality framework for business analysis work. The guardrails on this site are architecture guardrails. They are the road with the barriers at the edge: you can drive as fast as you like in the middle.
+
+## What the guardrails apply to
+
+The guardrails apply to digital services and products that Defra builds, buys or runs. Some, such as [GR-IAM-02](identity-and-access.md#gr-iam-02), name software as a service explicitly.
+
+!!! warning "To be confirmed"
+    **TODO:** which guardrails apply to commercial off-the-shelf products and to data and reporting platforms. The [architecture guidance](https://digital.defra.gov.uk/architecture) in the Defra Digital Service Manual says it may not apply to deploying commercial off-the-shelf software or building a data or reporting platform.
+
+### Arm's length bodies {#arms-length-bodies}
+
+!!! warning "To be confirmed"
+    **TODO:** whether the guardrails apply to Defra's arm's length bodies as well as the core department, and any differences by area. Each area page links here until its applicability is confirmed; record the answer in that page's `applicability` front matter.
 
 ## How to read a guardrail
 
@@ -19,7 +34,7 @@ Each guardrail has an identifier, a level, a short rationale and a way to show y
 
 | Level | Means | If you cannot meet it |
 | --- | --- | --- |
-| <span class="rfc rfc--must">Must</span> | A requirement, usually from law, government policy or a significant Defra risk. | You need an approved [exception](../governance/exceptions.md) from the Technical Design Authority. |
+| <span class="rfc rfc--must">Must</span> | A requirement from law or mandatory government policy, a baseline security control, or a [DDTS doctrine](../principles/doctrine.md) non-negotiable. We keep these few. | You need an approved [exception](../governance/exceptions.md) from the Technical Design Authority. |
 | <span class="rfc rfc--should">Should</span> | The strong default. There may be good reasons to differ. | Record why in an [architecture decision record](../governance/architecture-decision-records.md) and share it with your solution design authority. |
 | <span class="rfc rfc--could">Could</span> | Recommended good practice. | No action needed, but we would like to know what worked better. |
 
@@ -29,7 +44,8 @@ Under each guardrail, **Phases, evidence and status** shows:
 
 - **status** - draft, endorsed by the [Technology Governance Board](../governance/tgb.md), or deprecated
 - **phases** - when it applies: discovery, alpha, beta or live
-- **evidence** - what to show an assessor or your solution design authority to prove you meet it
+- **evidence** - what to show an assessor or your solution design authority to prove you meet it, phase by phase: in discovery the intent or constraint you identified, in alpha the design or plan, in beta what you built and tested, and in live how you operate and review it
+- **led by** - the roles that make sure the team meets it, such as content designer or technical architect - see [guardrails by role](../deliver/roles/index.md)
 - **automated check** - whether it can be checked by a tool, or needs a person
 - the Service Standard, Technology Code of Practice and Secure by Design points it helps you meet, and the DDTS doctrine it applies
 

@@ -11,32 +11,54 @@ guardrail_defaults:
 guardrails:
   GR-TECH-01:
     phases: [discovery, alpha]
+    lead_roles: [technical-architect]
     evidence: ADR listing the reuse options considered from the technology capability catalogue and cross-government components
+    evidence_by_phase:
+      discovery: Existing Defra and cross-government options for the need identified from the technology capability catalogue
+      alpha: ADR recording the reuse options considered and why they did or did not fit
+      significant-change: ADR showing reuse options considered for any new component
     service_standard_points: [13]
     tcop_points: [8]
   GR-TECH-02:
     phases: [discovery, alpha]
+    lead_roles: [technical-architect, product-manager]
     evidence: Buy or build options appraisal in the ADR or business case
     service_standard_points: [11]
     tcop_points: [11]
   GR-TECH-03:
     phases: [alpha, beta, live]
+    lead_roles: [technical-architect, delivery-manager]
     evidence: Exit plan covering data export in open formats, contract terms and an estimate of switching cost
+    evidence_by_phase:
+      alpha: Draft exit plan for each new product, platform or significant supplier
+      beta: Exit plan agreed, with contracts giving Defra its data and the right to export it in open formats
+      live: Exit plan reviewed at contract renewal, with switching cost estimated
+      significant-change: Exit plan updated for any new product or supplier
+      retire: Exit plan carried out - data exported in open formats and contracts ended
     tcop_points: [11]
   GR-TECH-04:
     phases: [discovery, alpha]
+    lead_roles: [security-architect, technical-architect]
     evidence: Supplier security assessment, DPIA where personal data is involved, data location, accessibility and single sign-on confirmed before contract
+    evidence_by_phase:
+      discovery: SaaS and third-party products under consideration listed, with the assessments they will need
+      alpha: Security, data protection, data location, accessibility and single sign-on assessed before contract
     service_standard_points: [9]
     tcop_points: [6, 7, 11]
     sbd_principles: [2]
   GR-TECH-05:
     phases: [alpha]
+    lead_roles: [technical-architect]
     evidence: ADR noting the open standards used and how portable the choice is
     service_standard_points: [13]
     tcop_points: [4]
   GR-TECH-06:
     phases: [discovery]
+    lead_roles: [delivery-manager, product-manager]
     evidence: Record of the conversation with the architecture team before procurement started
+    evidence_by_phase:
+      discovery: Architecture team consulted before any procurement under spend control starts
+      significant-change: Architecture team consulted before new procurement for the change
     tcop_points: [11]
 ---
 
@@ -62,7 +84,7 @@ guardrails:
 
 ## GR-TECH-03 Plan your exit before you enter {#gr-tech-03}
 
-<span class="rfc rfc--must">Must</span> Any new product, platform or significant supplier dependency has a documented exit plan covering data export in open formats, contract terms and an estimate of switching cost.
+<span class="rfc rfc--should">Should</span> Any new product, platform or significant supplier dependency has a documented exit plan covering data export in open formats, contract terms and an estimate of switching cost.
 
 **Why:** Lock-in is sometimes a sensible trade-off, but it must be a deliberate one.
 

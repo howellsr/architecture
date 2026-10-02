@@ -66,7 +66,12 @@ Then add its metadata to the `guardrails:` block in the page's front matter:
 guardrails:
   GR-HOST-08:
     phases: [alpha, beta, live]
+    lead_roles: [developer, technical-architect]
     evidence: What a team shows to prove they meet it
+    evidence_by_phase:               # required for a Must, for every phase it applies in
+      alpha: The design or plan that shows it
+      beta: What was built and tested
+      live: How it is operated and reviewed
     automated_check: manual          # or describe the automated check
     service_standard_points: [11]    # only where the link is clear
     tcop_points: [5]
@@ -78,7 +83,9 @@ guardrails:
 | --- | --- |
 | `status` | `draft`, `endorsed` or `deprecated`. Endorsed means approved by the [Technology Governance Board](../governance/tgb.md). |
 | `phases` | When the guardrail applies: any of `discovery`, `alpha`, `beta`, `live` |
-| `evidence` | What a team shows to prove they meet it. **Required for every Must** - the build fails without it. |
+| `evidence` | What a team shows to prove they meet it, in general. **Required for every Must** - the build fails without it. Used wherever no phase-specific evidence is given. |
+| `lead_roles` | The roles that lead the guardrail - one or more of the DDaT role ids in `delivery/roles.yaml`, such as `content-designer` or `technical-architect`. **Required for every guardrail.** Each role has a page under [By role](../deliver/roles/index.md). |
+| `evidence_by_phase` | What to show in each phase or lifecycle event: `discovery` (intent or constraint identified), `alpha` (design or plan), `beta` (built and tested), `live` (operated and reviewed), `significant-change` and `retire`. **A Must needs an entry for every phase it applies in**, and for `significant-change` or `retire` if it is listed for them in `delivery/lifecycle.yaml`. Only list a phase in `phases` if a team can do or show something for the guardrail in that phase. |
 | `automated_check` | How it can be checked automatically, or `manual` |
 | `service_standard_points` | [Service Standard](https://www.gov.uk/service-manual/service-standard) points (1 to 14) it helps meet. Leave out unless the link is clear. |
 | `tcop_points` | [Technology Code of Practice](https://www.gov.uk/guidance/the-technology-code-of-practice) points (1 to 13) |
@@ -133,7 +140,7 @@ Add `status: draft` to the page's front matter. The page shows a "Draft - to be 
 
 ### Add a pattern
 
-Copy an existing page in `docs/patterns/` and keep its sections: context, solution (with a diagram), guardrails it helps you meet, related Secure by Design artefacts, and when not to use it. Set the front matter:
+Copy an existing page in `docs/patterns/` and keep its sections: context, solution (with a diagram), what users see, content to design, what to test with users, guardrails it helps you meet, related Secure by Design artefacts, and when not to use it. Set the front matter:
 
 ```yaml
 pattern:
@@ -142,7 +149,10 @@ pattern:
   summary: One sentence saying when to use it.
   guardrails: [GR-API-05, GR-API-06]
   sbd: [stride-template]     # artefact keys listed in hooks/patterns.py
+  user_experience: written   # written, or tbc while the user experience sections are unwritten
 ```
+
+Write the three user experience sections with a designer, a content designer and a user researcher, and link to [GOV.UK Design System](https://design-system.service.gov.uk/) patterns where they exist. If they are not written yet, set `user_experience: tbc`, put one "To be confirmed" box in "What users see", and write "To be written - see the box above." in the other two. The build fails if a section is missing, out of order or empty, or if `user_experience` does not match the sections.
 
 Keep the `<!-- patterns:guardrails -->` and `<!-- patterns:sbd -->` markers where those sections go. The build fills them in, adds the pattern to the [catalogue](../patterns/index.md), and fails if a guardrail id is unknown. Add the page to `nav` in `mkdocs.yml`.
 
@@ -156,6 +166,10 @@ Do not guess Defra facts such as names, contacts, URLs, lead times or approvals.
 ```
 
 Every box is listed on the [open questions](../about/open-questions.md) page. Delete the box once the fact is confirmed.
+
+### Add an abbreviation
+
+Add it to `includes/abbreviations.md` as `*[TDA]: Technical Design Authority`. Every page then shows the expansion as a tooltip. Still write the expansion in full the first time you use an abbreviation on a page, for example "Technical Design Authority (TDA)". The build removes the tooltip there, so screen readers do not hear it twice, and inside guardrail ids such as GR-API-05. It fails if either is left.
 
 ### Add a diagram
 

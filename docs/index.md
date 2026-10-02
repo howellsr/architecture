@@ -9,7 +9,7 @@ hide:
 <section class="da-section" aria-labelledby="start" markdown>
 <p class="da-kicker da-kicker--dark">Start here</p>
 <h2 id="start" class="da-h2">What do you need to do?</h2>
-<p class="da-intro">Pick the job in front of you. Each route takes you to the smallest useful set of guidance.</p>
+<p class="da-intro">Pick the job in front of you. Each route takes you to the smallest useful set of guidance. Designer or researcher? Start with <a href="deliver/working-with-architects/">working with architects</a>. Architect, or want to be one? See <a href="about/architecture-profession/">developing architecture at Defra</a>.</p>
 
 <div class="da-routes" markdown>
 
@@ -91,7 +91,7 @@ How the TGB, the TDA and solution design authorities work, what to bring and how
 <section class="da-section" aria-labelledby="decide" markdown>
 <p class="da-kicker da-kicker--dark">How we decide</p>
 <h2 id="decide" class="da-h2">Doctrine, principles, guardrails</h2>
-<p class="da-intro">One line of sight from the CDIO's non-negotiables to the decisions your team makes this week.</p>
+<p class="da-intro"><!-- registers:doctrine-intro --></p>
 
 <div class="da-cascade" markdown>
 
@@ -100,7 +100,7 @@ How the TGB, the TDA and solution design authorities work, what to bring and how
 
 ### [DDTS doctrine](principles/doctrine.md)
 
-The non-negotiables: platforms before projects, standards before exceptions, reuse before buy, data as an enterprise asset, assume AI, outcomes over structures, digital first.
+<!-- registers:doctrine-lead --> platforms before projects, standards before exceptions, reuse before buy, data as an enterprise asset, assume AI, outcomes over structures, digital first.
 </div>
 
 <div class="da-cascade__step" markdown>

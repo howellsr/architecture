@@ -14,6 +14,28 @@ To release a version, change `## [Unreleased]` to `## [X.Y.Z] - YYYY-MM-DD` and 
 
 ### Added
 
+- Draft services and capabilities page, using the definitions from Defra's service taxonomy and showing where the handrail fits.
+- Draft guardrails `GR-DATA-10` (research data), `GR-DATA-11` (no real personal data in prototypes) and `GR-FE-07` (tell users what is happening when things fail or are slow), all Shoulds, with evidence for each phase.
+- "What users see", "Content to design" and "What to test with users" sections in every pattern and the worked example, with `user_experience` pattern metadata (`written` or `tbc`) checked by the build and shown in the pattern catalogue.
+
+### Changed
+
+- Architecture decisions for review are emailed to StrategicEnterpriseArchitecture@defra.gov.uk, replacing the alpha holding address noreply@defra.gov.uk.
+
+### Fixed
+
+- Abbreviation tooltips appeared inside guardrail ids such as GR-API-05, and next to their own expansion, where screen readers could announce it twice. The build now removes them and fails if any are left.
+- The open questions page asked whether the guardrails apply to arm's length bodies 15 times, once for each area. It is now one question on the guardrails overview.
+- Getting onto Defra platforms links GOV.UK Pay's support page instead of "To be confirmed".
+
+## [0.2.0] - 2026-10-02
+
+The first release with a PDF of every guardrail attached.
+
+### Added
+
+- Where things live page, setting out what belongs on this site and what belongs in the Defra Digital Service Manual, with matching links checked by a test and a link check.
+- Developing architecture at Defra page: roles and skills, the Architecture Community and All Architecture meetups.
 - Structured metadata for every guardrail: status, phases, evidence, automated check, Service Standard, Technology Code of Practice and Secure by Design mappings, doctrine, owner, last reviewed and version introduced. The build fails if a Must has no evidence.
 - Guardrail library filters for phase and status, and `guardrails.json`.
 - Open questions page, generated from "To be confirmed" boxes.
@@ -21,14 +43,27 @@ To release a version, change `## [Unreleased]` to `## [X.Y.Z] - YYYY-MM-DD` and 
 - Patterns section, a worked licence example and proposed reference architectures for field inspection, incident response and grants.
 - Delivery partners section: contracting, mobilisation, handover and exit, and working with other suppliers.
 - Draft guardrails: `GR-DEV-09` (ADRs), `GR-AI-07` (supplier AI coding assistants), `GR-AI-08` to `GR-AI-11` (agentic AI), `GR-PROD-01` to `GR-PROD-04` (products and platforms), `GR-DIG-01` to `GR-DIG-03` (digital first) and `GR-FIELD-01` to `GR-FIELD-04` (field working and devices).
-- New Must guardrails, all in draft: `GR-AI-08`, `GR-AI-09`, `GR-AI-10`, `GR-AI-11` and `GR-FIELD-03`.
-- Draft services and capabilities page, using the definitions from Defra's service taxonomy and showing where the handrail fits.
+- Links from the handrail to Defra's tools radar and the Emerging Technology Radar 2026.
+- Working with architects page for designers and researchers, and the architect's place in a multidisciplinary team on the team page.
+- `lead_roles` guardrail metadata naming the DDaT roles that lead each guardrail, a role filter in the library, and a page for each role under Deliver a service.
+- `evidence_by_phase` guardrail metadata, with phase-specific evidence for every Must, used on phase pages and checklists.
 - A GitHub Action, `tools/guardrail-check`, that checks a repository against GR-OPEN-02, GR-DEV-08, GR-API-02, GR-OPEN-03, GR-DEV-03, GR-DEV-06 and GR-DEV-09.
 - Architecture decision records for this site in `docs/adr`.
 - Versioned releases with a PDF of every guardrail, a "version in force" banner, approval status, the exception register, guardrails health and applicability notes for each guardrail area.
 
+### Changed
+
+- Guardrails GR-AI-01, GR-AI-02, GR-AI-07 to GR-AI-11, GR-FE-01, GR-FE-02, GR-FE-04, GR-FE-06, GR-SUS-01, GR-SUS-05 and GR-HOST-01 link to the matching pages of the Defra Digital Service Manual. Secure by Design defers to the DDTS Portfolio Hub lifecycle requirements. Getting onto Defra platforms no longer lists GOV.UK One Login separately, because Defra services use it through Defra Customer Identity. The home page describes the DDTS doctrine as draft until the approvals register records it as endorsed.
+- TDA and TGB decisions are recorded in an architecture decision register on the Defra architecture SharePoint site, raised by email, instead of in this repository. Team ADRs stay in service repositories. See ADR 0005.
+- Aligned with the Defra Digital Service Manual: `GR-IAM-01` names Defra Customer Identity (Defra ID); `GR-DEV-01` follows the manual's approved technologies; `GR-AI-02` follows the AI digital toolkit's data rules; Deliver a service, governance, platforms, NFRs, patterns and the security, accessibility and sustainability guardrail pages link to the manual instead of repeating it. Platforms now include the Defra Interactive Map.
+- Fewer Must guardrails: 26 Musts became Shoulds, leaving 29 Musts. A guardrail is now a Must only where law or mandatory government policy requires it, it is a baseline security control, or it puts a DDTS doctrine non-negotiable into practice. The new Shoulds are `GR-AI-05`, `GR-AI-06`, `GR-AI-08` to `GR-AI-11`, `GR-API-02`, `GR-API-04`, `GR-API-05`, `GR-TECH-03`, `GR-DATA-01` to `GR-DATA-03`, `GR-FIELD-03`, `GR-HOST-02`, `GR-HOST-03`, `GR-HOST-06`, `GR-HOST-07`, `GR-OPS-01`, `GR-OPS-02`, `GR-OPEN-02`, `GR-OPEN-03`, `GR-SEC-08`, `GR-DEV-03`, `GR-DEV-04` and `GR-DEV-06`.
+- Governance names the Portfolio Assurance Board (PAB) for spend control and InvestCo for investment approvals.
+- When Must guardrails apply: `GR-DATA-02` now also applies in discovery; `GR-HOST-02`, `GR-OPEN-01` and `GR-SEC-09` no longer apply in discovery; `GR-HOST-03`, `GR-IAM-02`, `GR-IAM-03`, `GR-OPS-02`, `GR-SEC-04`, `GR-SEC-05`, `GR-DEV-04` and `GR-DEV-06` no longer apply in alpha.
+
 ### Fixed
 
+- The open questions page listed the example "To be confirmed" box from the contribution guide as a real question.
+- Applicability notes lower-cased acronyms in area names, such as "apis and integration".
 - The guardrails page described ten architecture principles; there are eight.
 - The self-assurance checklist mapped ADRs to a principle rather than a guardrail.
 

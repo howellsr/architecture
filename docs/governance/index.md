@@ -85,10 +85,15 @@ flowchart TB
 
 Architecture governance works alongside, not instead of:
 
-- **Service assessments** against the [Service Standard](https://www.gov.uk/service-manual/service-standard) - see the [Defra Digital Service Manual](https://digital.defra.gov.uk/service-manual)
-- **Spend control** under the government digital and technology spend control
+- **Service assessments** against the [Service Standard](https://www.gov.uk/service-manual/service-standard) - see [service assessments](https://digital.defra.gov.uk/service-assessments) in the Defra Digital Service Manual
+- **Operational service readiness**, including the operational service design review board at the start of beta - see [operational service readiness](https://digital.defra.gov.uk/delivery-groups/follow-delivery-governance/assurance/operational-service-readiness)
+- **Spend control** under the Portfolio Assurance Board (PAB)
 - **Security assurance** through [Secure by Design](../security/secure-by-design.md)
 - **Data protection** through DPIAs and the Data Protection Officer
-- **Investment approvals** through the department's business case process
+- **Investment approvals** through the department's business case process (InvestCo)
+
+Delivery groups have their own [governance model](https://digital.defra.gov.uk/delivery-groups/follow-delivery-governance/governance-model), in which principal architects set the technology guardrails for the group in line with the enterprise architecture principles. The Delivery Architecture team handles exceptions to the [Defra software development standards](https://defra.github.io/software-development-standards/) - see [architecture](https://digital.defra.gov.uk/architecture) in the Defra Digital Service Manual.
+
+The TGB agrees strategies, the TDA is the technical decision-making authority, and in each [solution design authority](solution-design-authorities.md#delivery-groups-and-principal-architects) the principal architect is accountable for decisions within a roadmap agreed at the TDA. How exceptions on this site relate to the Delivery Architecture team's is [still being agreed](exceptions.md#exceptions-to-the-software-development-standards).
 
 We aim to reuse evidence across these: an ADR log, threat model and architecture diagram prepared for one should satisfy the others.

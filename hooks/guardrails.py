@@ -70,6 +70,8 @@ SECTION = re.compile(r"^## ", re.M)
 LEVELS = {"principle": "Principle", "must": "Must", "should": "Should", "could": "Could"}
 STATUSES = {"draft": "Draft", "endorsed": "Endorsed", "deprecated": "Deprecated"}
 PHASES = {"discovery": "Discovery", "alpha": "Alpha", "beta": "Beta", "live": "Live"}
+# Phases plus the lifecycle events that have their own page in Deliver a service.
+LIFECYCLE = {**PHASES, "significant-change": "Significant change", "retire": "Retire"}
 
 # Reference lists the metadata points to. Names are from the published sources.
 SERVICE_STANDARD = {
@@ -129,7 +131,19 @@ REFERENCES = {
     ),
 }
 REQUIRED = ("status", "phases", "automated_check", "owner", "last_reviewed", "since_version")
-FIELDS = set(REQUIRED) | set(REFERENCES) | {"evidence", "doctrine", "replaced_by"}
+FIELDS = set(REQUIRED) | set(REFERENCES) | {"evidence", "evidence_by_phase", "lead_roles", "doctrine", "replaced_by"}
+
+
+def _roles() -> dict[str, str]:
+    """DDaT roles that can lead a guardrail, from delivery/roles.yaml."""
+    path = os.path.join(ROOT, "delivery", "roles.yaml")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as handle:
+        return {r["id"]: r["name"] for r in yaml.safe_load(handle)["roles"]}
+
+
+ROLES = _roles()
 
 _guardrails: list[dict] = []
 _stats: dict = {}
@@ -188,6 +202,28 @@ def _check(gid: str, level: str, meta: dict, where: str) -> list[str]:
         for point in meta.get(field) or []:
             if point not in points:
                 errors.append(f"{where}: {gid} refers to {name} point {point}, which does not exist")
+    if level != "principle":
+        roles = meta.get("lead_roles") or []
+        if not roles:
+            errors.append(f"{where}: {gid} has no lead_roles - say which roles lead it")
+        for role in roles:
+            if role not in ROLES:
+                errors.append(f"{where}: {gid} has unknown lead role '{role}', expected one of {', '.join(ROLES)}")
+    by_phase = meta.get("evidence_by_phase") or {}
+    if not isinstance(by_phase, dict):
+        errors.append(f"{where}: {gid} evidence_by_phase must map phases to evidence")
+        by_phase = {}
+    for phase, text in by_phase.items():
+        if phase not in LIFECYCLE:
+            errors.append(f"{where}: {gid} has evidence for unknown phase '{phase}'")
+        elif not str(text or "").strip():
+            errors.append(f"{where}: {gid} has empty evidence for {phase}")
+        elif phase in PHASES and phase not in (meta.get("phases") or []):
+            errors.append(f"{where}: {gid} has evidence for {phase} but does not apply in {phase}")
+    if level == "must":
+        for phase in meta.get("phases") or []:
+            if phase in PHASES and phase not in by_phase:
+                errors.append(f"{where}: {gid} is a Must in {phase} but has no evidence_by_phase for {phase}")
     if level == "must" and not str(meta.get("evidence") or "").strip():
         errors.append(f"{where}: {gid} is a Must but has no 'evidence' - say how a team shows they meet it")
     if meta.get("status") == "deprecated" and not meta.get("replaced_by"):
@@ -237,6 +273,7 @@ def parse(docs_dir: str) -> list[dict]:
                 meta.setdefault("doctrine", doctrines_for.get(gid, []))
             meta.setdefault("doctrine", page_doctrines)
             errors += _check(gid, kind, meta, name)
+            by_phase = meta.get("evidence_by_phase") if isinstance(meta.get("evidence_by_phase"), dict) else {}
             last = meta.get("last_reviewed")
             found.append(
                 {
@@ -249,6 +286,10 @@ def parse(docs_dir: str) -> list[dict]:
                     "status": meta.get("status"),
                     "phases": meta.get("phases") or [],
                     "evidence": str(meta.get("evidence") or "").strip(),
+                    "lead_roles": meta.get("lead_roles") or [],
+                    "evidence_by_phase": {
+                        k: str(by_phase[k]).strip() for k in LIFECYCLE if by_phase.get(k) is not None
+                    },
                     "automated_check": meta.get("automated_check"),
                     "service_standard_points": meta.get("service_standard_points") or [],
                     "tcop_points": meta.get("tcop_points") or [],
@@ -269,6 +310,11 @@ def parse(docs_dir: str) -> list[dict]:
     if errors:
         raise PluginError("Guardrails are invalid:\n  - " + "\n  - ".join(errors))
     return found
+
+
+def evidence_for(g: dict, phase: str) -> str:
+    """What to show for a guardrail in a phase, falling back to its general evidence."""
+    return g["evidence_by_phase"].get(phase) or g["evidence"]
 
 
 def guardrails() -> list[dict]:
@@ -340,13 +386,19 @@ def on_post_build(config):
 # --- Renderers ---------------------------------------------------------------
 
 
+def _sentence_case(text: str) -> str:
+    """Lower-case the first letter for use mid-sentence, unless it starts an acronym such as APIs."""
+    return text if len(text) > 1 and text[1].isupper() else text[:1].lower() + text[1:]
+
+
 def _add_applicability(markdown: str, applicability, area: str) -> str:
     """Say who an area's guardrails apply to, after the page's lead paragraph."""
     if not applicability or applicability == "tbc":
+        # One open question for every area, asked once on the guardrails overview.
         box = (
-            '!!! warning "To be confirmed"\n'
-            f"    **TODO:** whether the {area.lower()} guardrails apply to Defra's arm's length bodies "
-            "as well as the core department, and any differences.\n"
+            '!!! info "Who these guardrails apply to"\n'
+            f"    The core department. Whether the {_sentence_case(area)} guardrails also apply to Defra's "
+            "arm's length bodies is [still to be confirmed](index.md#arms-length-bodies).\n"
         )
     else:
         box = f'!!! info "Who these guardrails apply to"\n    {applicability}\n'
@@ -356,6 +408,23 @@ def _add_applicability(markdown: str, applicability, area: str) -> str:
         anchor = next(i for i, line in enumerate(lines) if line.startswith("# "))
     lines.insert(anchor + 1, "\n" + box)
     return "\n".join(lines)
+
+
+def _role_links(g: dict, page, files) -> str:
+    links = []
+    for role in g["lead_roles"]:
+        target = files.get_file_from_path(f"deliver/roles/{role}.md")
+        name = html.escape(ROLES[role])
+        links.append(f'<a href="{get_relative_url(target.url, page.url)}">{name}</a>' if target else name)
+    return ", ".join(links)
+
+
+def _evidence_html(g: dict) -> str:
+    e = html.escape
+    if not g["evidence_by_phase"]:
+        return e(g["evidence"]) or "-"
+    items = "".join(f"<li><strong>{LIFECYCLE[k]}:</strong> {e(v)}</li>" for k, v in g["evidence_by_phase"].items())
+    return f'<ul class="gr-meta__phases">{items}</ul>'
 
 
 def _href(g: dict, page, files) -> str:
@@ -397,7 +466,8 @@ def _add_panels(markdown: str, on_page: list[dict], page, files) -> str:
         rows = [
             ("Status", f'<span class="gr-status gr-status--{g["status"]}">{STATUSES[g["status"]]}</span>'),
             ("Phases", ", ".join(PHASES[p] for p in g["phases"])),
-            ("Evidence", e(g["evidence"]) or "-"),
+            ("Led by", _role_links(g, page, files)),
+            ("Evidence", _evidence_html(g)),
             ("Automated check", "Manual" if g["automated_check"] == "manual" else e(g["automated_check"])),
         ]
         refs = _references(g)
@@ -448,8 +518,11 @@ def _print(page, config) -> str:
             check = "Manual" if g["automated_check"] == "manual" else g["automated_check"]
             out += [
                 f"*Status:* {STATUSES[g['status']]} · *Phases:* {', '.join(PHASES[p] for p in g['phases'])} · "
-                f"*Since:* {g['since_version']}  ",
-                f"*Evidence:* {g['evidence'] or '-'}  ",
+                f"*Since:* {g['since_version']} · *Led by:* {', '.join(ROLES[r] for r in g['lead_roles'])}  ",
+                *(
+                    [f"*Evidence in {LIFECYCLE[k].lower()}:* {v}  " for k, v in g["evidence_by_phase"].items()]
+                    or [f"*Evidence:* {g['evidence'] or '-'}  "]
+                ),
                 f"*Automated check:* {check}",
                 "",
             ]
@@ -474,6 +547,7 @@ def _library(page, files) -> str:
     options = "".join(f'<option value="{e(a)}">{e(a)}</option>' for a in areas)
     phase_options = "".join(f'<option value="{k}">{v}</option>' for k, v in PHASES.items())
     status_options = "".join(f'<option value="{k}">{v}</option>' for k, v in STATUSES.items())
+    role_options = "".join(f'<option value="{k}">{e(v)}</option>' for k, v in ROLES.items())
     levels = Counter(g["level"] for g in _guardrails)
     chips = "".join(
         f'<label class="gl-chip"><input type="checkbox" name="gl-level" value="{k}" checked> '
@@ -489,12 +563,14 @@ def _library(page, files) -> str:
             details = (
                 f'<dl class="gl-card__facts"><dt>Evidence</dt><dd>{e(g["evidence"]) or "-"}</dd>'
                 f"<dt>Automated check</dt><dd>{check}</dd>"
-                f"<dt>Phases</dt><dd>{', '.join(PHASES[p] for p in g['phases'])}</dd></dl>"
+                f"<dt>Phases</dt><dd>{', '.join(PHASES[p] for p in g['phases'])}</dd>"
+                f"<dt>Led by</dt><dd>{e(', '.join(ROLES[r] for r in g['lead_roles']))}</dd></dl>"
             )
         replaced = f' <span class="gl-card__replaced">Replaced by {g["replaced_by"]}</span>' if g["replaced_by"] else ""
         cards.append(
             f'<article class="gl-card" data-level="{g["level"]}" data-area="{e(g["area"])}" '
-            f'data-phases="{" ".join(g["phases"])}" data-status="{g["status"]}" data-search="{e(search)}">'
+            f'data-phases="{" ".join(g["phases"])}" data-roles="{" ".join(g["lead_roles"])}" '
+            f'data-status="{g["status"]}" data-search="{e(search)}">'
             f'<div class="gl-card__meta"><span class="rfc rfc--{g["level"]}">{LEVELS[g["level"]]}</span>'
             f'<code>{g["id"]}</code><span class="gr-status gr-status--{g["status"]}">{STATUSES[g["status"]]}</span>'
             f'<span class="gl-card__area">{e(g["area"])}</span></div>'
@@ -510,6 +586,8 @@ def _library(page, files) -> str:
         f'<option value="">All areas</option>{options}</select></label>'
         '<label class="gl-field"><span>Phase</span><select id="gl-phase">'
         f'<option value="">All phases</option>{phase_options}</select></label>'
+        '<label class="gl-field"><span>Role</span><select id="gl-role">'
+        f'<option value="">Any role</option>{role_options}</select></label>'
         '<label class="gl-field"><span>Status</span><select id="gl-status">'
         f'<option value="">Any status</option>{status_options}</select></label>'
         f'<fieldset class="gl-levels"><legend>Level</legend>{chips}</fieldset>'

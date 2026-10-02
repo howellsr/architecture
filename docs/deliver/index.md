@@ -2,10 +2,19 @@
 
 <p class="lead">What architecture your team needs at each stage of delivery: the guardrails that apply, the artefacts to produce, who to talk to and the evidence to bring to an assessment.</p>
 
-This section is for delivery team leads, product managers, architects and delivery partners. It covers the architecture evidence only. For how to run each phase, research with users and prepare for a service assessment, use the [Defra Digital Service Manual](https://digital.defra.gov.uk/service-manual) and the [GOV.UK Service Manual](https://www.gov.uk/service-manual). We link to them rather than repeat them.
+This section is for delivery team leads, product managers, architects and delivery partners. It covers the **architecture** evidence only. The [Defra Digital Service Manual](https://digital.defra.gov.uk/service-manual) is the place for how Defra delivers services, and we link to it rather than repeat it:
 
-!!! warning "To be confirmed"
-    **TODO:** links to the Defra Digital Service Manual pages that describe Defra's service assessment process for each phase, so each phase page can point to them directly.
+| For | Use the Defra Digital Service Manual |
+| --- | --- |
+| When services are assessed (after alpha, private beta and public beta), and how to book | [Service assessments](https://digital.defra.gov.uk/service-assessments) and [book an assessment](https://digital.defra.gov.uk/service-assessments/book-an-assessment) |
+| What assessors ask | [Assessment questions](https://digital.defra.gov.uk/service-assessments/assessment-questions) |
+| Getting ready to run a live service, including the operational service design review board at the start of beta | [Operational service readiness](https://digital.defra.gov.uk/delivery-groups/follow-delivery-governance/assurance/operational-service-readiness) |
+| Recording and approving spend | [Spend control](https://digital.defra.gov.uk/delivery-groups/follow-delivery-governance/assurance/spend-control) |
+| Who decides what in a delivery group | [Governance model](https://digital.defra.gov.uk/delivery-groups/follow-delivery-governance/governance-model) |
+| Designing, researching and writing content | [Design](https://digital.defra.gov.uk/design), [user research](https://digital.defra.gov.uk/user-research) and [content design](https://digital.defra.gov.uk/content) |
+| Building on Defra's common tools and approved technologies | [Architecture](https://digital.defra.gov.uk/architecture) and [software development](https://digital.defra.gov.uk/software-development) |
+
+This site adds what is specific to architecture: the guardrails, the decisions to record and the architecture evidence for each phase.
 
 ```mermaid
 flowchart LR
@@ -25,6 +34,8 @@ Each phase has a printable **assessment evidence checklist**, built from the sam
 
 ## Before you start
 
+- [Working with architects](working-with-architects.md): for designers and researchers - when to involve an architect, what to bring and what to expect.
+- [Guardrails by role](roles/index.md): the guardrails each role leads, phase by phase - for product managers, designers, researchers, developers, architects and analysts.
 - [Getting onto Defra platforms](platforms.md): what the shared platforms give you, and how to get access.
 - [Check your repository automatically](guardrail-check.md) against the guardrails a tool can check.
 - [Check a decision](../governance/decision-check.md) to find your governance route.
