@@ -8,8 +8,8 @@ If functional requirements are the "what", non-functional requirements are the "
 
 <!-- nfrs:status -->
 
-!!! warning "To be confirmed"
-    **TODO:** whether this site's service tiers and NFR catalogue should be retired in favour of the DDTS lists maintained by the business analysis community, or kept in step with them.
+!!! note "Kept for now"
+    We are keeping this site's service tiers and NFR catalogue during alpha, and will review whether to retire them in favour of the business analysis lists after user feedback. Where the two differ, the business analysis lists in the Defra Digital Service Manual take precedence.
 
 ## Start here
 
