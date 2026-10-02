@@ -26,6 +26,7 @@ All three have evidence for each phase and are in the [guardrail backlog](roadma
 
 ### Smaller changes
 
+- New issue forms to propose an architecture pattern, answer an open question and give feedback by role, alongside reporting a content error. The pull request checklist now asks contributors to confirm guardrail ids are unchanged, the changelog is updated, all checks have run and unconfirmed facts are marked "To be confirmed".
 - Abbreviation tooltips no longer appear inside guardrail ids such as GR-API-05, or next to their own expansion such as "Technical Design Authority (TDA)", where screen readers could read the expansion twice.
 - [Raise a decision for review](../governance/architecture-decision-records.md#raise-a-decision-for-review) now uses the StrategicEnterpriseArchitecture@defra.gov.uk mailbox instead of the alpha holding address.
 - The question of whether the guardrails apply to Defra's arm's length bodies is now asked once, on the [guardrails overview](../guardrails/index.md#arms-length-bodies), instead of on each of the 15 area pages. The [open questions](open-questions.md) page lists it once.
