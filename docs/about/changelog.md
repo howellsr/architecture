@@ -8,6 +8,7 @@
 
 - **The site is now at [defra.github.io/architecture](https://defra.github.io/architecture/)**, and its source at [DEFRA/architecture](https://github.com/DEFRA/architecture). Old addresses redirect to the same page, including guardrail anchors. See [moving to the DEFRA GitHub organisation](moving-to-defra.md) and [ADR 0006](../adr/0006-move-to-defra-github.md).
 - Version 0.2.0 and its PDF stay at their original address, so contracts that cite them remain valid. New contracts should cite releases from DEFRA/architecture.
+- **Version 0.3.0** is the first [release](releases.md) from DEFRA/architecture, with a PDF of every guardrail attached. New contracts should cite it.
 - Changes can still be prepared in a fork and proposed to DEFRA/architecture. Only DEFRA/architecture publishes the site and makes releases.
 - **Every item in the [guardrail backlog](roadmap.md#guardrail-backlog) has an issue** where you can comment, give evidence or propose wording. Select an item's name to open it.
 

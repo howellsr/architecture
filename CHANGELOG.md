@@ -12,6 +12,8 @@ To release a version, change `## [Unreleased]` to `## [X.Y.Z] - YYYY-MM-DD` and 
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-02
+
 ### Added
 
 - A `backlog-issues` workflow, run by hand, creates the labels in `.github/labels.yml` and an issue for each row of the guardrail backlog, read from the roadmap page. Each backlog row links to its issue, and tests check the links and that every link in an issue is a full address.
