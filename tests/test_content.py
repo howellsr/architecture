@@ -645,3 +645,118 @@ def test_claude_md_stays_short_and_keeps_the_ground_rules():
     assert len(text.splitlines()) <= 80, "Keep CLAUDE.md under 80 lines - link to the contribute pages instead"
     for rule in ("Guardrail ids are stable", "Never invent Defra facts", "never in the GitHub wiki", "gets a test"):
         assert rule in text, f"CLAUDE.md is missing the ground rule: {rule}"
+
+
+# --- Issue and pull request templates ------------------------------------------------
+
+
+def test_feedback_form_lists_every_role():
+    """The feedback form's roles match the roles the site has pages for."""
+    form = load_yaml(".github", "ISSUE_TEMPLATE", "feedback.yml")
+    role = next(item for item in form["body"] if item.get("id") == "role")
+    options = role["attributes"]["options"]
+    for r in load_yaml("delivery", "roles.yaml")["roles"]:
+        assert r["name"] in options, f"Add '{r['name']}' to the feedback form's roles"
+
+
+def test_issue_forms_are_triaged():
+    for path in glob.glob(os.path.join(ROOT, ".github", "ISSUE_TEMPLATE", "*.yml")):
+        if path.endswith("config.yml"):
+            continue
+        form = load_yaml(".github", "ISSUE_TEMPLATE", os.path.basename(path))
+        assert "needs-triage" in form.get("labels", []), f"{os.path.basename(path)}: add the needs-triage label"
+        assert form.get("name") and form.get("description") and form.get("body"), os.path.basename(path)
+
+
+def test_pull_request_checklist_covers_the_ground_rules():
+    with open(os.path.join(ROOT, ".github", "pull_request_template.md"), encoding="utf-8") as handle:
+        text = handle.read()
+    for rule in ("Guardrail ids unchanged", "Changelog updated", "All checks run", "To be confirmed"):
+        assert rule in text, f"pull request template is missing: {rule}"
+
+
+# --- Prose checks ---------------------------------------------------------------
+
+
+def test_heading_case_catches_title_case():
+    spec = importlib.util.spec_from_file_location("heading_case", os.path.join(ROOT, "scripts", "heading_case.py"))
+    headings = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(headings)
+    assert "Phase" in headings.problems("Deliver a service Phase by phase")
+    assert headings.problems("GR-HOST-01 Use Defra's strategic delivery platform by default {#gr-host-01}") == []
+    assert headings.problems("Talk to the Technical Design Authority about novel use of AI") == []
+    assert headings.problems("Which route do I take?") == []
+    text = "---\n# a comment: Not A Heading\n---\n\n# Good heading\n\n```\n# Not Checked\n```\n\n## Bad Heading\n"
+    assert headings.check(text) == [("Bad Heading", ["Heading"])]
+
+
+def test_vale_rules_are_configured():
+    with open(os.path.join(ROOT, ".vale.ini"), encoding="utf-8") as handle:
+        config = handle.read()
+    assert "BasedOnStyles = Defra" in config
+    for rule in ("WordsToAvoid", "Filler", "Exclamation"):
+        assert os.path.exists(os.path.join(ROOT, ".vale", "styles", "Defra", f"{rule}.yml")), rule
+
+
+def test_site_design_lists_every_hook():
+    """The site design page explains every hook the build runs."""
+    with open(os.path.join(ROOT, "mkdocs.yml"), encoding="utf-8") as handle:
+        hooks = re.findall(r"^  - hooks/(\w+\.py)$", handle.read(), re.M)
+    assert len(hooks) > 5
+    with open(os.path.join(DOCS, "contribute", "site-design.md"), encoding="utf-8") as handle:
+        page = handle.read()
+    missing = [h for h in hooks if f"`{h}`" not in page]
+    assert not missing, "Describe these hooks in docs/contribute/site-design.md: " + ", ".join(missing)
+
+
+# --- Maintenance -----------------------------------------------------------------
+
+
+def test_review_due_warns_after_twelve_months():
+    spec = importlib.util.spec_from_file_location("review_due", os.path.join(ROOT, "scripts", "review_due.py"))
+    review = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(review)
+    import datetime
+
+    today = datetime.date(2027, 10, 2)
+    items = [
+        {"id": "GR-A-01", "last_reviewed": "2026-10-01", "status": "draft"},
+        {"id": "GR-A-02", "last_reviewed": "2026-10-02", "status": "draft"},
+        {"id": "GR-A-03", "last_reviewed": "2025-01-01", "status": "deprecated"},
+    ]
+    assert [g["id"] for g in review.overdue(items, today)] == ["GR-A-01"]
+
+
+def test_every_label_used_is_defined():
+    defined = {label["name"] for label in load_yaml(".github", "labels.yml")}
+    used = set()
+    for path in glob.glob(os.path.join(ROOT, ".github", "**", "*.yml"), recursive=True):
+        if path.endswith("labels.yml"):
+            continue
+        with open(path, encoding="utf-8") as handle:
+            text = handle.read()
+        for match in re.findall(r"^\s*labels:\s*\[([^\]]*)\]", text, re.M):
+            used |= {x.strip() for x in match.split(",") if x.strip()}
+        used |= set(re.findall(r"^\s*labels:\s*([a-z][a-z-]+)\s*$", text, re.M))
+    assert used, "no labels found - has the template format changed?"
+    assert used <= defined, f"Define these labels in .github/labels.yml: {sorted(used - defined)}"
+
+
+def test_codeowners_and_maintainers_exist():
+    for name in ("MAINTAINERS.md", os.path.join(".github", "CODEOWNERS")):
+        assert os.path.exists(os.path.join(ROOT, name)), name
+    with open(os.path.join(ROOT, ".github", "CODEOWNERS"), encoding="utf-8") as handle:
+        active = [line for line in handle if line.strip() and not line.startswith("#")]
+    assert active and active[0].split()[0] == "*", "CODEOWNERS needs a default owner for every file"
+
+
+def test_guidance_does_not_live_in_the_wiki():
+    """All guidance lives in this repository; nothing links to a GitHub wiki."""
+    found = []
+    for path in glob.glob(os.path.join(ROOT, "**", "*.md"), recursive=True):
+        if "node_modules" in path:
+            continue
+        with open(path, encoding="utf-8") as handle:
+            if re.search(r"github\.com/[^/\s]+/[^/\s]+/wiki", handle.read()):
+                found.append(os.path.relpath(path, ROOT))
+    assert not found, "Move this guidance into the repository instead of linking to a wiki: " + ", ".join(found)

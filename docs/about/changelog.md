@@ -4,6 +4,17 @@
 
 ## October 2026
 
+### Content style and site design
+
+- **New page: [site design](../contribute/site-design.md)** - how pages are built from data by hooks, the templates, theme tokens, components and interactive tools, for maintainers. A test checks that it describes every hook.
+- **New page: [content style](../contribute/content-style.md)** - the house rules on top of the GOV.UK style guide, how to write a guardrail and a pattern, diagrams and a glossary of the terms this site uses.
+- Pull requests now get **prose warnings** from Vale (words to avoid, filler words and exclamation marks) and a check that headings are in sentence case. They never block a merge.
+
+### How the site is maintained
+
+- **[`MAINTAINERS.md`](https://github.com/howellsr/architecture/blob/main/MAINTAINERS.md)** sets out the roles (names to be confirmed), the two-week triage target, labels, the route for changing a Must (TDA review, then TGB approval), deprecation, releases, a monthly and quarterly review cadence, and the move to the DEFRA GitHub organisation.
+- Code owners are requested for review automatically, and CI now warns about any guardrail not reviewed for more than 12 months.
+
 ### Services and capabilities
 
 - **New draft page: [services and capabilities](../handrail/services-and-capabilities.md).** It uses the definitions from Defra's six-level service taxonomy - outcomes, whole services and services, products, common business capabilities, components and data - and shows where the business capability model, technology capabilities and Defra on a page fit into it. It also explains where architecture uses words such as capability, platform and "service" differently. Definitions are context-specific and we will keep iterating them with service design and product colleagues.
@@ -26,6 +37,9 @@ All three have evidence for each phase and are in the [guardrail backlog](roadma
 
 ### Smaller changes
 
+- New issue forms to propose an architecture pattern, answer an open question and give feedback by role, alongside reporting a content error. The pull request checklist now asks contributors to confirm guardrail ids are unchanged, the changelog is updated, all checks have run and unconfirmed facts are marked "To be confirmed".
+
+- [Where things live](../contribute/where-things-live.md#where-to-find-and-change-things) now explains what the site, the repository, Issues, the GitHub Project, Discussions and releases are each for, and why guidance never goes in a wiki.
 - Abbreviation tooltips no longer appear inside guardrail ids such as GR-API-05, or next to their own expansion such as "Technical Design Authority (TDA)", where screen readers could read the expansion twice.
 - [Raise a decision for review](../governance/architecture-decision-records.md#raise-a-decision-for-review) now uses the StrategicEnterpriseArchitecture@defra.gov.uk mailbox instead of the alpha holding address.
 - The question of whether the guardrails apply to Defra's arm's length bodies is now asked once, on the [guardrails overview](../guardrails/index.md#arms-length-bodies), instead of on each of the 15 area pages. The [open questions](open-questions.md) page lists it once.
