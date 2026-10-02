@@ -4,6 +4,12 @@
 
 ## October 2026
 
+### User experience in patterns
+
+- **Every [architecture pattern](../patterns/index.md) now has three sections for designers and researchers:** what users see, content to design, and what to test with users. They link to GOV.UK Design System patterns and components where they exist.
+- Written in full for [asynchronous submission](../patterns/async-submission.md#what-users-see) (reference number, what happens next, how long, delayed processing and duplicate submissions), [file upload](../patterns/file-upload.md#what-users-see) (the scanning wait, rejected files, and size and type limits up front) and [acting on behalf](../patterns/acting-on-behalf.md#what-users-see) (choosing who you act for, missing permissions, and agent and owner wording), and for the [worked example](../patterns/worked-example/index.md#what-users-see).
+- The other two patterns have the sections with a "To be confirmed" box. The pattern catalogue shows which are written.
+
 ### Smaller changes
 
 - [Raise a decision for review](../governance/architecture-decision-records.md#raise-a-decision-for-review) now uses the StrategicEnterpriseArchitecture@defra.gov.uk mailbox instead of the alpha holding address.
