@@ -678,3 +678,15 @@ def test_codeowners_and_maintainers_exist():
     with open(os.path.join(ROOT, ".github", "CODEOWNERS"), encoding="utf-8") as handle:
         active = [line for line in handle if line.strip() and not line.startswith("#")]
     assert active and active[0].split()[0] == "*", "CODEOWNERS needs a default owner for every file"
+
+
+def test_guidance_does_not_live_in_the_wiki():
+    """All guidance lives in this repository; nothing links to a GitHub wiki."""
+    found = []
+    for path in glob.glob(os.path.join(ROOT, "**", "*.md"), recursive=True):
+        if "node_modules" in path:
+            continue
+        with open(path, encoding="utf-8") as handle:
+            if re.search(r"github\.com/[^/\s]+/[^/\s]+/wiki", handle.read()):
+                found.append(os.path.relpath(path, ROOT))
+    assert not found, "Move this guidance into the repository instead of linking to a wiki: " + ", ".join(found)
