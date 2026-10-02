@@ -94,6 +94,6 @@ Architecture governance works alongside, not instead of:
 
 Delivery groups have their own [governance model](https://digital.defra.gov.uk/delivery-groups/follow-delivery-governance/governance-model), in which principal architects set the technology guardrails for the group in line with the enterprise architecture principles. The Delivery Architecture team handles exceptions to the [Defra software development standards](https://defra.github.io/software-development-standards/) - see [architecture](https://digital.defra.gov.uk/architecture) in the Defra Digital Service Manual.
 
-How the boards on this site map onto delivery groups, and how their exceptions relate to the Delivery Architecture team's, are still being agreed - see [solution design authorities](solution-design-authorities.md#delivery-groups-and-principal-architects) and [exceptions](exceptions.md#exceptions-to-the-software-development-standards).
+The TGB agrees strategies, the TDA is the technical decision-making authority, and in each [solution design authority](solution-design-authorities.md#delivery-groups-and-principal-architects) the principal architect is accountable for decisions within a roadmap agreed at the TDA. How exceptions on this site relate to the Delivery Architecture team's is [still being agreed](exceptions.md#exceptions-to-the-software-development-standards).
 
 We aim to reuse evidence across these: an ADR log, threat model and architecture diagram prepared for one should satisfy the others.

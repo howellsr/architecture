@@ -14,7 +14,8 @@ The manual covers how to do the job and who to contact; this site covers archite
 - **[Secure by Design](../security/secure-by-design.md)** says the authoritative lifecycle requirements are on the DDTS Portfolio Hub, owned by the Defra Security team, and presents this site's phase table as the architecture view of them.
 - **The home page** describes the DDTS doctrine as draft until the [approval status](approval-status.md) records it as endorsed.
 - **[Developing architecture at Defra](architecture-profession.md#architecture-at-defra)** now describes the three areas of architecture: Delivery Architecture in the delivery groups, Technical Architecture in Group Infrastructure and Operations (GIO), and Enterprise Architecture in the CTO Office.
-- New open questions on how solution design authorities map onto delivery groups and principal architects, how Must exceptions relate to the Delivery Architecture team's exception process, and whether the guardrails apply to off-the-shelf products and data platforms.
+- **[Solution design authorities](../governance/solution-design-authorities.md#delivery-groups-and-principal-architects)** now say how governance fits together: the TGB agrees strategies, the TDA is the technical decision-making authority and grants authority to SDAs, and in an SDA the principal architect is accountable for decisions that align with a roadmap agreed at the TDA, follow the principles and stay within the guardrails.
+- New open questions on how Must exceptions relate to the Delivery Architecture team's exception process, and whether the guardrails apply to off-the-shelf products and data platforms.
 
 ### Developing architecture at Defra
 
